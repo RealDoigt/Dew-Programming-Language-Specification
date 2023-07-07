@@ -23,15 +23,16 @@ A numeric literal is defined as a sequence of case sensitive characters which re
 
 ### Escape Sequences
 Escape sequences are special character sequences which begin with an asterisk `*`. They are used in character and string literals for characters that are not practical to type on a keyboard or characters which have a special functionality:
-
-* tabulation \*t
-* carriage return \*r
-* new line \*n
-* null character \*0
-* single-quote \*'
-* double-quote \*"
-* asterisk \*\*
-* backspace \*b
-* vertical tabulation \*v
-* bell \*a
-* form feed \*f
+| name | sequence|
+|-|-|
+| tabulation |\*t|
+| carriage return| \*r|
+| new line |\*n|
+| null character| \*0|
+| single-quote |\*'|
+| double-quote |\*"|
+| asterisk |\*\*|
+| backspace |\*b|
+| vertical tabulation| \*v|
+| bell |\*a|
+| form feed| \*f|
