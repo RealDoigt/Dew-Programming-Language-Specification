@@ -27,7 +27,7 @@ Escape sequences are special character sequences which begin with an asterisk `*
 * tabulation \*t
 * return carriage \*r
 * new line \*n
-* null character\*0
+* null character \*0
 * single-quote \*'
 * double-quote \*"
 * asterisk \*\*
