@@ -43,5 +43,7 @@ Declaring a variable in Dew is done by typing the type information with the modi
 ### Types
 Dew has 8 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`) and 5 type modifiers (`short`, `long`, `flex`, `ref`, `internal`). One can define type aliases with the `mode` keyword. It is also possible to define complex types with `struct`, `union`, `comp`, `model` and composition keywords `require`,  `include`, `expect`.
 
-### 
-##
+#### Type Table
+|type|definition|size|short|long|flex|
+|-|-|-|-|-|-|
+|int|signed integer|32-bits|16-bits|64-bits|NA|
