@@ -41,7 +41,7 @@ Escape sequences are special character sequences which begin with an asterisk `*
 Declaring a variable in Dew is done by typing the type information with the modifier(s) before the type name then the name of the variable. Optionally, it may also be initialised with either the assign operator or the initilize operator.
 
 ### Types
-Dew has 8 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`) and 5 type modifiers (`short`, `long`, `flex`, `ref`, `internal`). One can define type aliases with the `mode` keyword. It is also possible to define complex types with `struct`, `union`, `comp`, `model` and .
+Dew has 8 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`) and 5 type modifiers (`short`, `long`, `flex`, `ref`, `internal`). One can define type aliases with the `mode` keyword. It is also possible to define complex types with `struct`, `union`, `comp`, `model` and composition keywords `require`,  `include`, `expect`.
 
 ### 
 ##
