@@ -78,3 +78,20 @@ do
   echo(i) # prints 2
 od
 ```
+
+### Initialising a Variable
+A variable can be initialised in many ways.
+
+#### By Doing Nothing
+Just declaring a variable will automatically assign it a default value. Here's a list of default values by type:
+|type|default|
+|-|-|
+|int|0|
+|real|0|
+|string|"" (empty string)|
+|char|'*0'|
+|byte|0|
+|bool|false|
+|bits|\[false false false false false false false false\]|
+|type[] (array)|[] (empty array)|
+|type\[\<number\>\]|\[\<default value of type times the number\>\]
