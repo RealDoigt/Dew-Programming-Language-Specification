@@ -38,10 +38,10 @@ Escape sequences are special character sequences which begin with an asterisk `*
 | form feed| \*f|
 
 ## Variables and Types
-Declaring a variable in Dew is done by typing the type information with the modifier(s) before the type name then the name of the variable. Optionally, it may also be initialised with either the assign operator or the initilize operator.
+Declaring a variable in Dew is done by typing the type information with the modifier(s) before the type name then the name of the variable. Optionally, it may also be initialised with the assign operator, the initilize operator or the explode operator.
 
 ### Types
-Dew has 8 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`) and 5 type modifiers (`short`, `long`, `flex`, `ref`, `internal`). One can define type aliases with the `mode` and `enum` keywords. It is also possible to define complex types with `struct`, `union`, `comp`, `model` and composition keywords `require`,  `include`, `expect`.
+Dew has 9 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void` and `inf`) and 4 type modifiers (`short`, `long`, `flex` and `ref`). One can define type aliases with the `mode` and `enum` keywords. It is also possible to define complex types with `struct`, `union`, `comp`, `model` and composition keywords `require`,  `include`, `expect`.
 
 #### Type Table
 * ID = Implementation Defined
@@ -57,6 +57,7 @@ Dew has 8 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`
 |bool|boolean|8-bits|NA|ID|ID|
 |bits|bit mask|8-bits|NA|ID|ID|
 |void|no return value; not a real type|NA|NA|NA|NA|
+|inf|infers the type based on the value assigned to the variable; not a real type|NA|NA|NA|NA|
 
 ### Arrays
 An array is declared by adding the index operators `[]` after the type. If the size of the array is known in advance, but the elements aren't, one can type the size within the index operators. In all other cases, the index operators can be empty. Following Algol tradition, `ints`, `reals`, `strings`, `bytes` and `bools` are aliases for arrays of their corresponding type.
@@ -111,5 +112,29 @@ do
 
   # all six values of the array are set to 5
   int[6] c := 5
+od
+```
+
+#### Using the Initialize Operator
+The initialize operator `:` can be used to assign values to a group of variables. If there are less values than variables, then the last variables that don't have a matching value get the last value. The compiler should throw an error and refuse to compile if there is only one variable being initialized of if there are fewer variables than there are values.
+
+Example:
+```dew
+proc void main
+do
+  # set a to 1, b to 2 and c to 3
+  int a b c : 1 2 3
+
+  # set d to [10 128 52] and e to [23 55]
+  bytes d e : [10 128 52] [23 55]
+
+  # all elements of f are set to 400,000 and g is set to [7 8 2]
+  long int[3] f g : 400_000 [7 8 2]
+
+  # h, i and j are all set to -45
+  int h i j : -45
+
+  # k is set to "Hello" while l and m are set to "World!"
+  string k l m : "Hello" "World!"
 od
 ```
