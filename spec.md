@@ -63,3 +63,18 @@ An array is declared by adding the index operators `[]` after the type. If the s
 
 #### Flexible Arrays
 The `flex` keyword is used in the variable declaration to indicate that an array is flexible, meaning it can both increase and decrease in capacity and number of elements. In other languages, flexible arrays are also called dynamic arrays or lists.
+
+### References
+The `ref` keyword is used in function signatures and function calls on parameters which hold a copy of the address of the variable rather than a copy of the variable's value. Dereferencing is done automatically.
+
+Example:
+```dew
+proc void increment(ref int a) then ++a
+
+proc void main()
+do
+  int i := 1
+  increment(ref i)
+  echo(i) # prints 2
+od
+```
