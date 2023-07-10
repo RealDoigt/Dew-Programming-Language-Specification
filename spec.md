@@ -41,7 +41,7 @@ Escape sequences are special character sequences which begin with an asterisk `*
 Declaring a variable in Dew is done by typing the type information with the modifier(s) before the type name then the name of the variable. Optionally, it may also be initialised with either the assign operator or the initilize operator.
 
 ### Types
-Dew has 8 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`) and 5 type modifiers (`short`, `long`, `flex`, `ref`, `internal`). One can define type aliases with the `mode` keyword. It is also possible to define complex types with `struct`, `union`, `comp`, `model` and composition keywords `require`,  `include`, `expect`.
+Dew has 8 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`) and 5 type modifiers (`short`, `long`, `flex`, `ref`, `internal`). One can define type aliases with the `mode` and `enum` keywords. It is also possible to define complex types with `struct`, `union`, `comp`, `model` and composition keywords `require`,  `include`, `expect`.
 
 #### Type Table
 * ID = Implementation Defined
@@ -71,7 +71,7 @@ Example:
 ```dew
 proc void increment(ref int a) then ++a
 
-proc void main()
+proc void main
 do
   int i := 1
   increment(ref i)
@@ -83,7 +83,7 @@ od
 A variable can be initialised in many ways.
 
 #### By Doing Nothing
-Just declaring a variable will automatically assign it a default value. Here's a list of default values by type:
+Just by declaring a variable, it will automatically be assigned it a default value. Here's a list of default values by type:
 |type|default|
 |-|-|
 |int|0|
@@ -95,3 +95,21 @@ Just declaring a variable will automatically assign it a default value. Here's a
 |bits|\[false false false false false false false false\]|
 |type[] (array)|[] (empty array)|
 |type\[\<number\>\]|\[\<default value of type times the number\>\]
+
+#### Using the Assign Operator
+The assign operator `:=` can be used in order to assign a value to a variable or set all the values of an array to one value if the index operators are omitted.
+
+Example:
+```dew
+proc void main
+do
+  # variable a is set to 1
+  int a := 1
+
+  # variable b's three elements are set to 10, 20 and 30 respectively
+  ints b := [10 20 30]
+
+  # all six values of the array are set to 5
+  int[6] c := 5
+od
+```
