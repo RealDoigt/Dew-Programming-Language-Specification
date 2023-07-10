@@ -57,3 +57,9 @@ Dew has 8 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`
 |bool|boolean|8-bits|NA|ID|ID|
 |bits|bit mask|8-bits|NA|ID|ID|
 |void|no return value; not a real type|NA|NA|NA|NA|
+
+### Arrays
+An array is declared by adding the index operators `[]` after the type. If the size of the array is known in advance, but the elements aren't, one can type the size within the index operators. In all other cases, the index operators can be empty. Following Algol tradition, `ints`, `reals`, `strings`, `bytes` and `bools` are aliases for arrays of their corresponding type.
+
+#### Flexible Arrays
+The `flex` keyword is used in the variable declaration to indicate that an array is flexible, meaning it can both increase and decrease in capacity and number of elements. In other languages flexible arrays are also called dynamic arrays or lists.
