@@ -46,6 +46,7 @@ Dew has 8 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`
 #### Type Table
 * ID = Implementation Defined
 * NA = Not Applicable
+  
 |type|definition|size|short|long|long long|
 |-|-|-|-|-|-|
 |int|signed integer|32-bits|16-bits|64-bits|NA|
