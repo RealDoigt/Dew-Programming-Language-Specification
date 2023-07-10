@@ -83,7 +83,7 @@ od
 A variable can be initialised in many ways.
 
 #### By Doing Nothing
-Just by declaring a variable, it will automatically be assigned it a default value. Here's a list of default values by type:
+Just by declaring a variable, it will automatically be assigned a default value. Here's a list of default values by type:
 |type|default|
 |-|-|
 |int|0|
@@ -94,7 +94,7 @@ Just by declaring a variable, it will automatically be assigned it a default val
 |bool|false|
 |bits|\[false false false false false false false false\]|
 |type[] (array)|[] (empty array)|
-|type\[\<number\>\]|\[\<default value of type times the number\>\]
+|type\[\<number\>\]|\[\<default value of the type times the number\>\]
 
 #### Using the Assign Operator
 The assign operator `:=` can be used in order to assign a value to a variable or set all the values of an array to one value if the index operators are omitted.
