@@ -51,7 +51,7 @@ Dew has 8 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`
 |-|-|-|-|-|-|
 |int|signed integer|32-bits|16-bits|64-bits|NA|
 |real|binary floating point number|32-bits (single)|16-bits (half)|64-bits (double)|128-bits (quadruple)|
-|string|immutable and character array|variable (utf-8)|variable (ascii)|variable|variable|
+|string|immutable character array|variable (utf-8)|variable (ascii)|variable|variable|
 |char|character|1~4 bytes (utf-8)|1 byte (ascii)|ID|ID|
 |byte|unsigned integer|8-bits|NA|ID|ID|
 |bool|boolean|8-bits|NA|ID|ID|
