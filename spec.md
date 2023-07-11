@@ -148,7 +148,7 @@ do
 od
 ```
 #### Using the Extract Operator
-The extract operator `::` can be used to assign values from an array, bits, string or struct. If there are not enough variables to hold all the values, those values are simply ignored. Whether the Explode operator works with `inf` or not is up to the individual compiler.
+The extract operator `::` can be used to assign values from an array, bits, string or struct. If there are not enough variables to hold all the values, those values are simply ignored. Whether the extract operator works with `inf` or not is up to the individual compiler.
 
 Example:
 ```dew
@@ -156,10 +156,21 @@ proc void main
 do
   ints a := [4 10 29 678]
   int b c d e :: a
+  int f g :: a # the first two values are assigned to f and g, but the rest of the values in a are ignored
 
   echo(b) # prints 4
   echo(c) # prints 10
   echo(d) # prints 29
   echo(e) # prints 678
+  echo(f) # prints 4
+  echo(g) # prints 10
 od
 ```
+### Assiging Values Using Speciliazed Variants of the Assign and Initialize Operators
+The assign and initialize operators can also be used on variables which have already been assigned a value. However, there are many specialised variants of these two operators for common usecases. Do note that 
+
+|assign variant|initialize variant|assign name|initialize name|definition|examples|equivalent example\*|
+|-|-|-|-|-|-|-|
+|+=|+:|add-assign|add-init|adds the value(s) of the left expression to the value held by the variable(s) and assigns the result to the variable(s)|`a += 16` and `a b +: 16 8`|`a := a + 16`|
+
+\*Please refer to the section on the initialize operator for the reason why the equivalent example column doesn't present any example with the initialize operator.
