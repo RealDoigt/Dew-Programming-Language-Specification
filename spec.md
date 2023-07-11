@@ -148,7 +148,7 @@ do
 od
 ```
 #### Using the Extract Operator
-The explode operator `::` can be used to assign values from an array, bits, string or struct. If there are not enough variables to hold all the values, those values are simply ignored. Whether the Explode operator works with `inf` or not is up to the individual compiler.
+The extract operator `::` can be used to assign values from an array, bits, string or struct. If there are not enough variables to hold all the values, those values are simply ignored. Whether the Explode operator works with `inf` or not is up to the individual compiler.
 
 Example:
 ```dew
