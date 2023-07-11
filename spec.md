@@ -54,7 +54,7 @@ Dew has 9 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`
 |string|immutable character array|variable (utf-8)|variable (ascii)|variable|variable|
 |char|character|1~4 bytes (utf-8)|1 byte (ascii)|ID|ID|
 |byte|unsigned integer|8-bits|NA|ID|ID|
-|bool|boolean|8-bits|NA|ID|ID|
+|bool|boolean|8-bits|NA|NA|NA|
 |bits|bit mask|8-bits|NA|ID|ID|
 |void|no return value; not a real type|NA|NA|NA|NA|
 |inf|infers the type based on the value assigned to the variable; not a real type|NA|NA|NA|NA|
