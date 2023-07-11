@@ -1,6 +1,6 @@
 # Dew Programming Language Specification
 ## Introduction
-Dew is a high level programming language intended for experimenting with niche concepts. It is called Dew because it is Doigt's first serious language project and dew usually appears during the morning, which is the first part of the day. Dew's syntax is highly inspired by Algol68, Bash and B as well as more modern languages such as D. As far as the author is aware, there is only one active project working on a Dew compiler and it is his own project, which is far from complete. This language specification doesn't describe what current compiler(s) can do but what they should do.
+Dew is a high level programming language intended for experimenting with niche concepts. It is called Dew because it is Doigt's first serious language project and dew usually appears during the morning, which is the first part of the day. Dew's syntax is highly inspired by Algol 68, Bash and B as well as more modern languages such as D. As far as the author is aware, there is only one active project working on a Dew compiler and it is his own project, which is far from complete. This language specification doesn't describe what current compiler(s) can do but what they should do.
 
 ## Literals
 Dew has 4 types of literals: boolean literals, string literals, character literals and numeric literals.
@@ -167,10 +167,16 @@ do
 od
 ```
 ### Assiging Values Using Speciliazed Variants of the Assign and Initialize Operators
-The assign and initialize operators can also be used on variables which have already been assigned a value. However, there are many specialised variants of these two operators for common usecases. Do note that 
+The assign and initialize operators can also be used on variables which have already been assigned a value. However, there are many specialised variants of these two operators for common usecases.
 
 |assign variant|initialize variant|assign name|initialize name|definition|examples|equivalent example\*|
 |-|-|-|-|-|-|-|
-|+=|+:|add-assign|add-init|adds the value(s) of the left expression to the value held by the variable(s) and assigns the result to the variable(s)|`a += 16` and `a b +: 16 8`|`a := a + 16`|
+|+=|+:|add-assign|add-init|adds the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a += 16` and `a b +: 16 8`|`a := a + 16`|
+|-=|-:|sub-assign|sub-init|substracts the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a -= 16` and `a b -: 16 8`|`a := a - 16`|
+|/=|/:|div-assign|div-init|divides the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a /= 16` and `a b /: 16 8`|`a := a / 16`|
+|*=|*:|mul-assign|mul-init|multiplies the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a *= 16` and `a b *: 16 8`|`a := a * 16`|
+|^=|^:|power-assign|power-init|gets the result(s) of the variable(s) raised to the power of the expression and assigns it to the variable(s)|`a ^= 16` and `a b ^: 16 8`|`a := a ^ 16`|
+|%=|%:|mod-assign|mod-init|divides the value(s) of the left expression to the value held by the variable(s) and assigns the remainder to the variable(s)|`a %= 16` and `a b %: 16 8`|`a := a % 16`|
+|^=|^:|power-assign|power-init|gets the result(s) of the variable(s) raised to the power of the expression and assigns it to the variable(s)|`a ^= 16` and `a b ^: 16 8`|`a := a ^ 16`|
 
 \*Please refer to the section on the initialize operator for the reason why the equivalent example column doesn't present any example with the initialize operator.
