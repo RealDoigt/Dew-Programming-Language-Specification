@@ -177,6 +177,5 @@ The assign and initialize operators can also be used on variables which have alr
 |*=|*:|mul-assign|mul-init|multiplies the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a *= 16` and `a b *: 16 8`|`a := a * 16`|
 |^=|^:|power-assign|power-init|gets the result(s) of the variable(s) raised to the power of the expression and assigns it to the variable(s)|`a ^= 16` and `a b ^: 16 8`|`a := a ^ 16`|
 |%=|%:|mod-assign|mod-init|divides the value(s) of the left expression to the value held by the variable(s) and assigns the remainder to the variable(s)|`a %= 16` and `a b %: 16 8`|`a := a % 16`|
-|^=|^:|power-assign|power-init|gets the result(s) of the variable(s) raised to the power of the expression and assigns it to the variable(s)|`a ^= 16` and `a b ^: 16 8`|`a := a ^ 16`|
 
 \*Please refer to the section on the initialize operator for the reason why the equivalent example column doesn't present any example with the initialize operator.
