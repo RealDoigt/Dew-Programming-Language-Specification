@@ -65,6 +65,12 @@ An array is declared by adding the index operators `[]` after the type. If the s
 #### Flexible Arrays
 The `flex` keyword is used in the variable declaration to indicate that an array is flexible, meaning it can both increase and decrease in capacity and number of elements. In other languages, flexible arrays are also called dynamic arrays or lists.
 
+#### Strings
+A string is in almost every way an array of char. There are only a few differences:
+* Instead of writing `['H' 'e' 'l' 'l' 'o' ',' ' ' 'w' 'o' 'r' 'l' 'd' '!']`, which is long and tedious, strings in Dew are typed using double quotes: `"Hello, world!"`.
+* While you can use the index operators to access the individual char values contained in a specific string, you cannot modify that value since Dew strings are immutable.
+* Dew strings, just like properly formatted C strings, use the null terminator to indicate the end of a string.
+
 ### References
 The `ref` keyword is used in function signatures and function calls on parameters which hold a copy of the address of the variable rather than a copy of the variable's value. Dereferencing is done automatically.
 
