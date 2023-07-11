@@ -38,7 +38,7 @@ Escape sequences are special character sequences which begin with an asterisk `*
 | form feed| \*f|
 
 ## Variables and Types
-Declaring a variable in Dew is done by typing the type information with the modifier(s) before the type name then the name of the variable. Optionally, it may also be initialised with the assign operator, the initilize operator or the explode operator.
+Declaring a variable in Dew is done by typing the type information with the modifier(s) before the type name then the name of the variable. Optionally, it may also be initialised with the assign operator, the initilize operator or the extract operator as well as a few other specialised assign operators.
 
 ### Types
 Dew has 9 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void` and `inf`) and 4 type modifiers (`short`, `long`, `flex` and `ref`). One can define type aliases with the `mode` and `enum` keywords. It is also possible to define complex types with `struct`, `union`, `comp`, `model` and composition keywords `require`,  `include`, `expect`.
@@ -116,7 +116,7 @@ od
 ```
 
 #### Using the Initialize Operator
-The initialize operator `:` can be used to assign values to a group of variables. If there are less values than variables, then the last variables that don't have a matching value get the last value. The compiler should throw an error and refuse to compile if there is only one variable being initialized or if there are fewer variables than there are values. Whether the initialize operator works with `inf` or not is up to the individual compiler.
+The initialize operator `:` can be used to assign values to a group of variables. If there are less values than variables, then the last variables that don't have a matching value get the last value. The compiler should throw an error and refuse to compile if there is only one variable being initialized or if there are fewer variables than there are values. Whether the initialize operator works with `inf` or not is up to the individual compiler. The initialize operator is intended for use with simple use cases such as function calls, literals or other variables. If you need something that needs more operators such as `2 * userCount / 3`, it will not compile due to how the syntax works.
 
 Example:
 ```dew
@@ -136,5 +136,21 @@ do
 
   # k is set to "Hello" while l and m are set to "World!"
   string k l m : "Hello" "World!"
+od
+```
+#### Using the Extract Operator
+The explode operator `::` can be used to assign values from an array, bits, string or struct. If there are not enough variables to hold all the values, those values are simply ignored. Whether the Explode operator works with `inf` or not is up to the individual compiler.
+
+Example:
+```dew
+proc void main
+do
+  ints a := [4 10 29 678]
+  int b c d e :: a
+
+  echo(b) # prints 4
+  echo(c) # prints 10
+  echo(d) # prints 29
+  echo(e) # prints 678
 od
 ```
