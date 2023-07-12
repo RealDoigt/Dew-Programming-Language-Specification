@@ -174,14 +174,14 @@ od
 ```
 
 #### Using the Initialize Operator
-The initialize operator `:` can be used to assign values to a group of variables. If there are less values than variables, then the last variables that don't have a matching value get the last value. The compiler should throw an error and refuse to compile if there is only one variable being initialized or if there are fewer variables than there are values. Whether the initialize operator works with `inf` or not is up to the individual compiler. The initialize operator is intended for use with simple use cases such as function calls, literals or other variables. If you need something that needs more operators such as `2 * userCount / 3`, it will not compile due to how the syntax works.
+The initialize operator `:` can be used to assign values to a group of variables. If there are less values than variables, then the last variables that don't have a matching value get the last value. The compiler should throw an error and refuse to compile if there is only one variable being initialized or if there are fewer variables than there are values. Whether the initialize operator works with `inf` or not is up to the individual compiler. The initialize operator is intended for use with simple use cases such as function calls, literals or other variables. If you need to assign the result of an expression, such as `2 * userCount / 3`, it will not compile due to how the syntax works, but you can use the expression operators `()` to bypass this issue.
 
 Example:
 ```dew
 proc void main
 do
   # set a to 1, b to 2 and c to 3
-  int a b c : 1 2 3
+  int a b c : 1 2 (3 + 0)
 
   # set d to [10 128 52] and e to [23 55]
   bytes d e : [10 128 52] [23 55]
@@ -218,13 +218,11 @@ od
 ### Assiging Values Using Speciliazed Variants of the Assign and Initialize Operators
 The assign and initialize operators can also be used on variables which have already been assigned a value. However, there are many specialised variants of these two operators for common usecases.
 
-|assign variant|initialize variant|assign name|initialize name|definition|examples|equivalent example\*|
+|assign variant|initialize variant|assign name|initialize name|definition|examples|equivalent example|
 |-|-|-|-|-|-|-|
-|+=|+:|add-assign|add-init|adds the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a += 16` and `a b +: 16 8`|`a := a + 16`|
-|-=|-:|sub-assign|sub-init|substracts the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a -= 16` and `a b -: 16 8`|`a := a - 16`|
-|/=|/:|div-assign|div-init|divides the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a /= 16` and `a b /: 16 8`|`a := a / 16`|
-|*=|*:|mul-assign|mul-init|multiplies the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a *= 16` and `a b *: 16 8`|`a := a * 16`|
-|^=|^:|power-assign|power-init|gets the result(s) of the variable(s) raised to the power of the expression and assigns it to the variable(s)|`a ^= 16` and `a b ^: 16 8`|`a := a ^ 16`|
-|%=|%:|mod-assign|mod-init|divides the value(s) of the left expression to the value held by the variable(s) and assigns the remainder to the variable(s)|`a %= 16` and `a b %: 16 8`|`a := a % 16`|
-
-\*Please refer to the section on the initialize operator for the reason why the equivalent example column doesn't present any example with the initialize operator.
+|+=|+:|add-assign|add-init|adds the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a += 16` and `a b +: 16 8`|`a := a + 16` and `a b : (a + 16) (b + 8)`|
+|-=|-:|sub-assign|sub-init|substracts the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a -= 16` and `a b -: 16 8`|`a := a - 16` and `a b : (a - 16) (b - 8)`|
+|/=|/:|div-assign|div-init|divides the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a /= 16` and `a b /: 16 8`|`a := a / 16` and `a b : (a / 16) (b / 8)`|
+|*=|*:|mul-assign|mul-init|multiplies the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a *= 16` and `a b *: 16 8`|`a := a * 16` and `a b : (a * 16) (b * 8)`|
+|^=|^:|power-assign|power-init|gets the result(s) of the variable(s) raised to the power of the expression and assigns it to the variable(s)|`a ^= 16` and `a b ^: 16 8`|`a := a ^ 16` and `a b : (a ^ 16) (b ^ 8)`|
+|%=|%:|mod-assign|mod-init|divides the value(s) of the left expression to the value held by the variable(s) and assigns the remainder to the variable(s)|`a %= 16` and `a b %: 16 8`|`a := a % 16` and `a b : (a % 16) (b % 8)`|
