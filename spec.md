@@ -2,6 +2,9 @@
 ## Introduction
 Dew is a high level programming language intended for experimenting with niche concepts. It is called Dew because it is Doigt's first serious language project and dew usually appears during the morning, which is the first part of the day. Dew's syntax is highly inspired by Algol 68, Bash and B as well as more modern languages such as D. As far as the author is aware, there is only one active project working on a Dew compiler and it is his own project, which is far from complete. This language specification doesn't describe what current compiler(s) can do but what they should do.
 
+## Identifiers
+Dew identifiers are user-defined names for functions, procedures, variables, modules and custom types. A valid identifier starts with an underscore `_` or any letter of the latin alphabet. Then the rest of the identifier can be any alphanumeric character or underscore. No matter where the character is in the identifier, the character can be lower case or upper case. 
+
 ## Literals
 Dew has 4 types of literals: boolean literals, string literals, character literals and numeric literals.
 
