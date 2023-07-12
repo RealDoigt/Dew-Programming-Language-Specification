@@ -60,7 +60,7 @@ Unary operators are polish style operators with only one parameter.
 |--|decrement|arithmetic|decrements the operand, which must be a variable|
 |++|increment|arithmetic|increments the operand, which must be a variable|
 |**|multiply|arithmetic|multiplies the operand, which must be a variable, by itself|
-|\|sqrt|returns the square root of the operand, which must be a positive number|
+|\\|sqrt|returns the square root of the operand, which must be a positive number|
 |!|not|binary|returns the result of inverting the bits of the operand|
 
 ## Literals
