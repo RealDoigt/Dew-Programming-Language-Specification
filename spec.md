@@ -95,6 +95,19 @@ Dew has 9 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`
 |void|no return value; not a real type|NA|NA|NA|NA|
 |inf|infers the type based on the value assigned to the variable; not a real type|NA|NA|NA|NA|
 
+### Type Families
+Type families are used for comparing types, which is only useful for template constraints.
+|family|children|
+|-|-|
+|integer|bits, long bits, long long bits, byte, long byte, long long byte, short int, int, long int|
+|decimal|short real, real, long real, long long real|
+|boolean|bits, long bits, long long bits, bool|
+|strings|short string, string, long string, long long string|
+|numeric|integer, decimal|
+|text|strings, char|
+|binary|numeric, boolean, char|
+|primitive|binary, text|
+
 ### Arrays
 An array is declared by adding the index operators `[]` after the type. If the size of the array is known in advance, but the elements aren't, one can type the size within the index operators. In all other cases, the index operators can be empty. Following Algol tradition, `ints`, `reals`, `strings`, `bytes` and `bools` are aliases for arrays of their corresponding type.
 
