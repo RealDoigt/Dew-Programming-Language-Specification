@@ -55,6 +55,7 @@ A numeric literal is defined as a sequence of case sensitive characters which re
 * Octal: $o253
 * Decimal: 171
 * Hexadecimal: $xAB
+Negative numbers start with a minus sign `-` and the minus sign can only be applied to decimal numbers.
 
 ### Escape Sequences
 Escape sequences are special character sequences which begin with an asterisk `*`. They are used in character and string literals for characters that are not practical to type on a keyboard or characters which have a special functionality:
