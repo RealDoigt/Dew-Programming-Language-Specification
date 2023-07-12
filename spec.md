@@ -29,6 +29,8 @@ Dew comes with a wide variety of useful operators. This is not an exhaustive lis
 |>=|goe|boolean|returns true if the operands are equal or the left operand is greater than the right operand|
 |is|is|boolean|returns true if the left operand's type is the same or is a child of the type in the right|
 |isnt|isnot|boolean|returns true if the left operand's type is not the same or is not a child of the type in the right|
+|in|in|boolean|returns the index of the position where the first instance of the left operand can be found in the array, returns -1 if it was not found|
+|has|isin|boolean|returns true if the left operand can be found in the array| 
 |&|band|binary|returns the result of anding the bits of the left operand with those of the right operand|
 |\||bor|binary|returns the result of oring the bits of the left operand with those of the right operand|
 |\|\||beor|binary|returns the result of xoring the bits of the left operand with those of the right operand|
