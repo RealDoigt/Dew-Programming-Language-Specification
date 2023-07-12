@@ -1,4 +1,4 @@
-# Dew Programming Language Specification
+ # Dew Programming Language Specification
 ## Introduction
 Dew is a high level programming language intended for experimenting with niche concepts. It is called Dew because it is Doigt's first serious language project and dew usually appears during the morning, which is the first part of the day. Dew's syntax is highly inspired by Algol 68, Bash and B as well as more modern languages such as D. As far as the author is aware, there is only one active project working on a Dew compiler and it is his own project, which is far from complete. This language specification doesn't describe what current compiler(s) can do but what they should do.
 
@@ -62,12 +62,23 @@ Array operators are usually infix operators which will create a new array. They 
 Unary operators are polish style operators with only one parameter.
 |operator|name|type|definition|
 |-|-|-|-|
-|-|minus|arithmetic|returns the operand, which must be numeric, negative|
+|-|minus|arithmetic|returns the operand, which must be numeric, with the opposite sign|
+|+|plus|arithmetic|returns the absolute value of the operand|
 |--|decrement|arithmetic|decrements the operand, which must be a variable|
 |++|increment|arithmetic|increments the operand, which must be a variable|
-|**|multiply|arithmetic|multiplies the operand, which must be a variable, by itself|
+|**|power2|arithmetic|multiplies the operand, which must be a variable, by itself|
 | \ |sqrt|arithmetic|returns the square root of the operand, which must be a positive number|
 |!|not|binary|returns the result of inverting the bits of the operand|
+|-|minus-arr|array|returns a new array with all the numbers of the array now of the opposite sign|
+|+|plus-arr|array|returns a new array with all the absolute values of the numbers in the array| 
+|--|dec-arr|array|decrements all the elements of the array|
+|++|inc-arr|array|increments all the elements of the array|
+|**|p2-arr|array|multiplies all the elements of the array by themselves|
+| \ |sqrt-arr|array|returns a new array with the square roots of all the elements of the array|
+|!|inv-arr|array|returns a new array with bits of all the elements the array inverted|
+|!!|pop|array|returns and removes the last element of the array|
+|$|length|array|returns the lenght of the array|
+|~|join|array|If the array is multidimensional, it returns a new array with all the arrays merged into one. If it's an array of strings, it returns all the strings concatenated into one string. If it's a single dimension array of chars, it creates a string.|
 
 ## Literals
 Dew has 4 types of literals: boolean literals, string literals, character literals and numeric literals.
