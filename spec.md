@@ -28,7 +28,7 @@ Dew comes with a wide variety of useful operators. This is not an exhaustive lis
 |<|lower|boolean|returns true if the left operand is smaller than the right operand|
 |>|greater|boolean|returns true if the left operand is greater than the right operand|
 |=|equal|boolean|returns true if both operands are equal|
-|<>|different|boolean|returns true neither operands are equal|
+|<>|different|boolean|returns true if neither operands are equal|
 |<=|loe|boolean|returns true if the operands are equal or the left operand is smaller than the right operand|
 |>=|goe|boolean|returns true if the operands are equal or the left operand is greater than the right operand|
 |is|is|boolean|returns true if the left operand's type is the same or is a child of the type in the right|
