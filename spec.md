@@ -50,10 +50,10 @@ Dew comes with a wide variety of useful operators. This is not an exhaustive lis
 Array operators are usually infix operators which will create a new array. They also work with the string type to a certain extent.
 |operator|name|definition|effect on string|
 |-|-|-|-|
-|+|add-arr|if the left operand is an array and the right operand is either an array or a number, return the matrix sum of both operands|NA|
-|-|sub-arr|if the left operand is an array and the right operand is either an array or a number, return the matrix difference of both operands|NA|
-|*|sub-arr|if the left operand is an array and the right operand is either an array or a number, return the matrix product of both operands|NA|
-|/|div-arr|if the left operand is an array and the right operand is either an array or a number, return the matrix quotient of both operands|NA|
+|+|addarr|if the left operand is an array and the right operand is either an array or a number, return the matrix sum of both operands|NA|
+|-|subarr|if the left operand is an array and the right operand is either an array or a number, return the matrix difference of both operands|NA|
+|*|subarr|if the left operand is an array and the right operand is either an array or a number, return the matrix product of both operands|NA|
+|/|divarr|if the left operand is an array and the right operand is either an array or a number, return the matrix quotient of both operands|NA|
 |~|concatenate|create a new array from both operands and order them from left to right|if one of the operands is a string, create a new string from both operands and order them from left to right|
 |~~|repeat|if the left operand is an array, create an array which has its elements repeated times the right operand|if the left operand is a string, create a new string which has its characters repeated times the right operand|
 |!~|remove|return a new array where all instances of right operand in left operand have been removed|return a new string where all instances of right operand in left operand have been removed|
@@ -264,13 +264,13 @@ The assign and initialize operators can also be used on variables which have alr
 
 |assign variant|initialize variant|assign name|initialize name|definition|examples|equivalent example|
 |-|-|-|-|-|-|-|
-|+=|+:|add-assign|add-init|adds the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s), matrix math applies if used on arrays|`a += 16` and `a b +: 16 8`|`a := a + 16` and `a b : (a + 16) (b + 8)`|
-|-=|-:|sub-assign|sub-init|substracts the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s), matrix math applies if used on arrays|`a -= 16` and `a b -: 16 8`|`a := a - 16` and `a b : (a - 16) (b - 8)`|
-|/=|/:|div-assign|div-init|divides the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s), matrix math applies if used on arrays|`a /= 16` and `a b /: 16 8`|`a := a / 16` and `a b : (a / 16) (b / 8)`|
-|*=|*:|mul-assign|mul-init|multiplies the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s), matrix math applies if used on arrays|`a *= 16` and `a b *: 16 8`|`a := a * 16` and `a b : (a * 16) (b * 8)`|
-|^=|^:|power-assign|power-init|gets the result(s) of the variable(s) raised to the power of the expression and assigns it to the variable(s)|`a ^= 16` and `a b ^: 16 8`|`a := a ^ 16` and `a b : (a ^ 16) (b ^ 8)`|
-|%=|%:|mod-assign|mod-init|divides the value(s) of the right expression to the value held by the variable(s) and assigns the remainder to the variable(s)|`a %= 16` and `a b %: 16 8`|`a := a % 16` and `a b : (a % 16) (b % 8)`|
-|&=|&:|and-assign|and-init|ands the bits of value(s) of the right expression to the bits of the value held by the variable(s) and assigns the result to the variable(s)|`a &= 16` and `a b &: 16 8`|`a := a & 16` and `a b : (a & 16) (b & 8)`|
-|\|=|\|:|or-assign|or-init|ors the bits of value(s) of the right expression to the bits of the value held by the variable(s) and assigns the result to the variable(s)|`a \|= 16` and `a b \|: 16 8`|`a := a \| 16` and `a b : (a \| 16) (b \| 8)`|
-|~=|~:|cat-assign|cat-init|concats the array(s) or string(s) with the result of the left expression and assigns the new array to the arrays on the left-side of the operator. If the array is flexible, no new array is created, the extant array is simply expanded.|`a ~= 16` and `a b ~: 16 8`|`a := a ~ 16` and `a b : (a ~ 16) (b ~ 8)`|
+|+=|+:|addassign|addinit|adds the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s), matrix math applies if used on arrays|`a += 16` and `a b +: 16 8`|`a := a + 16` and `a b : (a + 16) (b + 8)`|
+|-=|-:|subassign|subinit|substracts the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s), matrix math applies if used on arrays|`a -= 16` and `a b -: 16 8`|`a := a - 16` and `a b : (a - 16) (b - 8)`|
+|/=|/:|divassign|divinit|divides the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s), matrix math applies if used on arrays|`a /= 16` and `a b /: 16 8`|`a := a / 16` and `a b : (a / 16) (b / 8)`|
+|*=|*:|mulassign|mulinit|multiplies the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s), matrix math applies if used on arrays|`a *= 16` and `a b *: 16 8`|`a := a * 16` and `a b : (a * 16) (b * 8)`|
+|^=|^:|powerassign|powerinit|gets the result(s) of the variable(s) raised to the power of the expression and assigns it to the variable(s)|`a ^= 16` and `a b ^: 16 8`|`a := a ^ 16` and `a b : (a ^ 16) (b ^ 8)`|
+|%=|%:|modassign|modinit|divides the value(s) of the right expression to the value held by the variable(s) and assigns the remainder to the variable(s)|`a %= 16` and `a b %: 16 8`|`a := a % 16` and `a b : (a % 16) (b % 8)`|
+|&=|&:|andassign|andinit|ands the bits of value(s) of the right expression to the bits of the value held by the variable(s) and assigns the result to the variable(s)|`a &= 16` and `a b &: 16 8`|`a := a & 16` and `a b : (a & 16) (b & 8)`|
+|\|=|\|:|orassign|orinit|ors the bits of value(s) of the right expression to the bits of the value held by the variable(s) and assigns the result to the variable(s)|`a \|= 16` and `a b \|: 16 8`|`a := a \| 16` and `a b : (a \| 16) (b \| 8)`|
+|~=|~:|catassign|catinit|concats the array(s) or string(s) with the result of the left expression and assigns the new array to the arrays on the left-side of the operator. If the array is flexible, no new array is created, the extant array is simply expanded.|`a ~= 16` and `a b ~: 16 8`|`a := a ~ 16` and `a b : (a ~ 16) (b ~ 8)`|
 
