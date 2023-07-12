@@ -77,8 +77,8 @@ Unary operators are polish style operators with only one parameter.
 | \ |sqrt-arr|array|returns a new array with the square roots of all the elements of the array|
 |!|inv-arr|array|returns a new array with bits of all the elements the array inverted|
 |!!|pop|array|returns and removes the last element of the array|
-|$|length|array|returns the lenght of the array|
-|~|join|array|If the array is multidimensional, it returns a new array with all the arrays merged into one. If it's an array of strings, it returns all the strings concatenated into one string. If it's a single dimension array of chars, it creates a string.|
+|$|length|array|returns the length of the array|
+|~|join|array|if the array is multidimensional, it returns a new array with all the arrays merged into one. If it's an array of strings, it returns all the strings concatenated into one string. If it's a single dimension array of chars, it creates a string.|
 
 ## Literals
 Dew has 4 types of literals: boolean literals, string literals, character literals and numeric literals.
