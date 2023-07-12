@@ -274,3 +274,46 @@ The assign and initialize operators can also be used on variables which have alr
 |\|=|\|:|orassign|orinit|ors the bits of value(s) of the right expression to the bits of the value held by the variable(s) and assigns the result to the variable(s)|`a \|= 16` and `a b \|: 16 8`|`a := a \| 16` and `a b : (a \| 16) (b \| 8)`|
 |~=|~:|catassign|catinit|concats the array(s) or string(s) with the result of the left expression and assigns the new array to the arrays on the left-side of the operator. If the array is flexible, no new array is created, the extant array is simply expanded.|`a ~= 16` and `a b ~: 16 8`|`a := a ~ 16` and `a b : (a ~ 16) (b ~ 8)`|
 
+## Type Aliases
+Custom types can be defined as aliases using the `enum` and `mode` keywords. These types are should ideally be handled at compile time or by a preprocessor.
+
+### Mode
+The `mode` is keyword is used for simple type aliases. Whether it is used as a way to save some typing time or as a way to more clearly and visually establish API equivalences between languages and frameworks. The basic syntax is `mode custom_type_name is <type>`. A more advanced syntax can be used for array types: `mode custom_array_type(n) is \<array type>\[n]`
+
+Example 1:
+```dew
+use std.math
+
+¢
+ this example makes "quad"
+ an alias for long long real
+¢
+mode quad is long long real
+
+proc main
+do
+  quad tau := PI * 2
+  echo(tau) # prints 6.28318530718..........................
+od
+```
+
+Example 2:
+```dew
+¢
+ this example establishes equivalent
+ types for use with SQL
+¢
+
+mode CHAR(size) is char[size]
+mode VARCHAR(size) is flex char[size]
+mode INT is int
+mode TINYINT is byte
+
+proc main
+do
+  CHAR(5) c5 := ['H' 'e' 'l' 'l' 'o']
+  VARCHAR(7) vc := [' ' 'w' 'o' 'r' 'l' 'd']
+  vc := c5 ~ vc
+  echo(~vc) # prints Hello world
+od
+```
