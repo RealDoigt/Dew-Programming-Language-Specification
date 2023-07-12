@@ -278,7 +278,7 @@ The assign and initialize operators can also be used on variables which have alr
 Custom types can be defined as aliases using the `enum` and `mode` keywords. These types are should ideally be handled at compile time or by a preprocessor.
 
 ### Mode
-The `mode` is keyword is used for simple type aliases. Whether it is used as a way to save some typing time or as a way to more clearly and visually establish API equivalences between languages and frameworks. The basic syntax is `mode custom_type_name is <type>`. A more advanced syntax can be used for array types: `mode custom_array_type(n) is \<array type>\[n]`
+The `mode` keyword is used for simple type aliases. Whether it is used as a way to save some typing time or as a way to more clearly and visually establish API equivalences between languages and frameworks. The basic syntax is `mode custom_type_name is <type>`. A more advanced syntax can be used for array types: `mode custom_array_type(n) is \<array type>\[n]`
 
 Example 1:
 ```dew
