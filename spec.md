@@ -59,7 +59,7 @@ Array operators are usually infix operators which will create a new array. They 
 |!~|remove|return a new array where all instances of right operand in left operand have been removed|return a new string where all instances of right operand in left operand have been removed|
 
 ### Unary Operators
-Unary operators are polish style operators with only one parameter.
+Unary operators are prefix operators with only one parameter.
 |operator|name|type|definition|
 |-|-|-|-|
 |-|minus|arithmetic|returns the operand, which must be numeric, with the opposite sign|
