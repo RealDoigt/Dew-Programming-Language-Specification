@@ -36,6 +36,15 @@ Dew comes with a wide variety of useful operators. This is not an exhaustive lis
 |!\||bnor|binary|returns the result of noring the bits of the left operand with those of the right operand|
 |&&|beand|binary|returns the result of xnoring the bits of the left operand with those of the right operand|
 
+### Array Operators
+Array operators are usually infix operators which will create a new array. They also work with the string type to a certain extent.
+|operator|name|definition|effect on string|
+|-|-|-|-|
+|+|add-arr|If the left operand is an array and the right operand is either an array or a number, return the matrix sum of both operands|NA|
+|-|sub-arr|If the left operand is an array and the right operand is either an array or a number, return the matrix difference of both operands|NA|
+|*|sub-arr|If the left operand is an array and the right operand is either an array or a number, return the matrix product of both operands|NA|
+|/|div-arr|If the left operand is an array and the right operand is either an array or a number, return the matrix quotient of both operands|NA|
+|~|concatenate|Create a new array from both operands and order them from left to right|Create a new string from both operands and order them from left to right|
 
 ## Literals
 Dew has 4 types of literals: boolean literals, string literals, character literals and numeric literals.
