@@ -40,13 +40,22 @@ Dew comes with a wide variety of useful operators. This is not an exhaustive lis
 Array operators are usually infix operators which will create a new array. They also work with the string type to a certain extent.
 |operator|name|definition|effect on string|
 |-|-|-|-|
-|+|add-arr|If the left operand is an array and the right operand is either an array or a number, return the matrix sum of both operands|NA|
-|-|sub-arr|If the left operand is an array and the right operand is either an array or a number, return the matrix difference of both operands|NA|
-|*|sub-arr|If the left operand is an array and the right operand is either an array or a number, return the matrix product of both operands|NA|
-|/|div-arr|If the left operand is an array and the right operand is either an array or a number, return the matrix quotient of both operands|NA|
-|~|concatenate|Create a new array from both operands and order them from left to right|Create a new string from both operands and order them from left to right|
+|+|add-arr|if the left operand is an array and the right operand is either an array or a number, return the matrix sum of both operands|NA|
+|-|sub-arr|if the left operand is an array and the right operand is either an array or a number, return the matrix difference of both operands|NA|
+|*|sub-arr|if the left operand is an array and the right operand is either an array or a number, return the matrix product of both operands|NA|
+|/|div-arr|if the left operand is an array and the right operand is either an array or a number, return the matrix quotient of both operands|NA|
+|~|concatenate|create a new array from both operands and order them from left to right|if one of the operands is a string, create a new string from both operands and order them from left to right|
+|~~|repeat|if the left operand is an array, create an array which has its elements repeated times the right operand|if the left operand is a string, create a new string which has its characters repeated times the right operand|
+|!~|remove|return a new array where all instances of right operand in left operand have been removed|return a new string where all instances of right operand in left operand have been removed|
 
-###
+### Unary Operators
+Unary operators are operators polish style operators with only one parameter.
+|operator|name|type|definition|
+|-|-|-|-|
+|-|minus|arithmetic|turns the operand, which must be numeric, negative|
+|--|decrement|arithmetic|decrements the operand, which must be a variable|
+|++|increment|arithmetic|increments the operand, which must be a variable|
+|!|not|binary|inverts the bits of the operand|
 
 ## Literals
 Dew has 4 types of literals: boolean literals, string literals, character literals and numeric literals.
