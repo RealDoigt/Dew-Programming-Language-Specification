@@ -200,6 +200,7 @@ Just by declaring a variable, it will automatically be assigned a default value.
 
 #### Using the Assign Operator
 The assign operator `:=` can be used in order to assign a value to a variable or set all the values of an array to one value if the index operators are omitted.
+If an expression is needed inside the index operators, one must use the expression operators `()`.
 
 Example:
 ```dew
@@ -209,7 +210,7 @@ do
   int a := 1
 
   # variable b's three elements are set to 10, 20 and 30 respectively
-  ints b := [10 20 30]
+  ints b := [10 20 (25 + 5)]
 
   # all six values of the array are set to 5
   int[6] c := 5
