@@ -35,6 +35,10 @@ Dew comes with a wide variety of useful operators. This is not an exhaustive lis
 |!&|bnand|binary|returns the result of nanding the bits of the left operand with those of the right operand|
 |!\||bnor|binary|returns the result of noring the bits of the left operand with those of the right operand|
 |&&|beand|binary|returns the result of xnoring the bits of the left operand with those of the right operand|
+|<<|lshift|binary|returns the result of shifting the bits of the left operand to the left by right operand|
+|>>|rshift|binary|returns the result of shifting the bits of the left operand to the right by right operand|
+|<@|lrot|binary|returns the result of rotating the bits of the left operand to the left by right operand|
+|@>|rrot|binary|returns the result of rotating the bits of the left operand to the right by right operand|
 
 ### Array Operators
 Array operators are usually infix operators which will create a new array. They also work with the string type to a certain extent.
@@ -49,13 +53,15 @@ Array operators are usually infix operators which will create a new array. They 
 |!~|remove|return a new array where all instances of right operand in left operand have been removed|return a new string where all instances of right operand in left operand have been removed|
 
 ### Unary Operators
-Unary operators are operators polish style operators with only one parameter.
+Unary operators are polish style operators with only one parameter.
 |operator|name|type|definition|
 |-|-|-|-|
-|-|minus|arithmetic|turns the operand, which must be numeric, negative|
+|-|minus|arithmetic|returns the operand, which must be numeric, negative|
 |--|decrement|arithmetic|decrements the operand, which must be a variable|
 |++|increment|arithmetic|increments the operand, which must be a variable|
-|!|not|binary|inverts the bits of the operand|
+|**|multiply|arithmetic|multiplies the operand, which must be a variable, by itself|
+|\|sqrt|returns the square root of the operand, which must be a positive number|
+|!|not|binary|returns the result of inverting the bits of the operand|
 
 ## Literals
 Dew has 4 types of literals: boolean literals, string literals, character literals and numeric literals.
