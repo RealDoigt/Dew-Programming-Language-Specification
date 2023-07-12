@@ -3,7 +3,39 @@
 Dew is a high level programming language intended for experimenting with niche concepts. It is called Dew because it is Doigt's first serious language project and dew usually appears during the morning, which is the first part of the day. Dew's syntax is highly inspired by Algol 68, Bash and B as well as more modern languages such as D. As far as the author is aware, there is only one active project working on a Dew compiler and it is his own project, which is far from complete. This language specification doesn't describe what current compiler(s) can do but what they should do.
 
 ## Identifiers
-Dew identifiers are user-defined names for functions, procedures, variables, modules and custom types. A valid identifier starts with an underscore `_` or any letter of the latin alphabet. Then the rest of the identifier can be any alphanumeric character or underscore. No matter where the character is in the identifier, the character can be lower case or upper case. 
+Dew identifiers are user-defined names for functions, procedures, variables, modules and custom types. A valid identifier starts with an underscore `_` or any letter of the latin alphabet. Then the rest of the identifier can be any alphanumeric character or underscore. No matter where the character is in the identifier, the character can be lower case or upper case.
+
+## Binary, Logical, Boolean, Arithmetic and Array Operators
+Dew comes with a wide variety of useful operators. This is not an exhaustive list as there are other types of operators which are mentionned with their purpose explained further down this document. The operators listed here are infix operators which need two parameters and return a result.
+|operator|name|type|definition|
+|-|-|-|-|
+|\+|add|arithmetic|returns the sum of two numbers|
+|-|sub|arithmetic|returns the difference of two numbers|
+|/|div|arithmetic|returns the quotient of two numbers|
+|*|mul|arithmetic|returns the product of two numbers|
+|%|mod|arithmetic|returns the remainder a division of two integers|
+|^|power|arithmetic|returns the result of raising the left operand to the power of the right operand|
+|and|land|logical|returns true if both boolean expressions return true|
+|or|lor|logical|returns true if either boolean expressions return true|
+|eor|leor|logical|returns true if only one boolean expression returns true|
+|nand|lnand|logical|returns true if either boolean expressions return false|
+|nor|lnor|logical|returns true if neither boolean expressions return true|
+|eand|leand|logical|returns true if both boolean expressions returns the same result|
+|<|lower|boolean|returns true if the left operand is smaller than the right operand|
+|>|greater|boolean|returns true if the left operand is greater than the right operand|
+|=|equal|boolean|returns true if both operands are equal|
+|<>|different|boolean|returns true neither operands are equal|
+|<=|loe|boolean|returns true if the operands are equal or the left operand is smaller than the right operand|
+|>=|goe|boolean|returns true if the operands are equal or the left operand is greater than the right operand|
+|is|is|boolean|returns true if the left operand's type is the same or is a child of the type in the right|
+|isnt|isnot|boolean|returns true if the left operand's type is not the same or is not a child of the type in the right|
+|&|band|binary|returns the result of anding the bits of the left operand with those of the right operand|
+|\||bor|binary|returns the result of oring the bits of the left operand with those of the right operand|
+|\|\||beor|binary|returns the result of xoring the bits of the left operand with those of the right operand|
+|!&|bnand|binary|returns the result of nanding the bits of the left operand with those of the right operand|
+|!\||bnor|binary|returns the result of noring the bits of the left operand with those of the right operand|
+|&&|beand|binary|returns the result of xnoring the bits of the left operand with those of the right operand|
+
 
 ## Literals
 Dew has 4 types of literals: boolean literals, string literals, character literals and numeric literals.
