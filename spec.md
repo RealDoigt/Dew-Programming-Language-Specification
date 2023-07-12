@@ -46,6 +46,8 @@ Array operators are usually infix operators which will create a new array. They 
 |/|div-arr|If the left operand is an array and the right operand is either an array or a number, return the matrix quotient of both operands|NA|
 |~|concatenate|Create a new array from both operands and order them from left to right|Create a new string from both operands and order them from left to right|
 
+###
+
 ## Literals
 Dew has 4 types of literals: boolean literals, string literals, character literals and numeric literals.
 
@@ -229,9 +231,9 @@ The assign and initialize operators can also be used on variables which have alr
 
 |assign variant|initialize variant|assign name|initialize name|definition|examples|equivalent example|
 |-|-|-|-|-|-|-|
-|+=|+:|add-assign|add-init|adds the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a += 16` and `a b +: 16 8`|`a := a + 16` and `a b : (a + 16) (b + 8)`|
-|-=|-:|sub-assign|sub-init|substracts the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a -= 16` and `a b -: 16 8`|`a := a - 16` and `a b : (a - 16) (b - 8)`|
-|/=|/:|div-assign|div-init|divides the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a /= 16` and `a b /: 16 8`|`a := a / 16` and `a b : (a / 16) (b / 8)`|
-|*=|*:|mul-assign|mul-init|multiplies the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s)|`a *= 16` and `a b *: 16 8`|`a := a * 16` and `a b : (a * 16) (b * 8)`|
+|+=|+:|add-assign|add-init|adds the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s), matrix math applies if used on arrays|`a += 16` and `a b +: 16 8`|`a := a + 16` and `a b : (a + 16) (b + 8)`|
+|-=|-:|sub-assign|sub-init|substracts the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s), matrix math applies if used on arrays|`a -= 16` and `a b -: 16 8`|`a := a - 16` and `a b : (a - 16) (b - 8)`|
+|/=|/:|div-assign|div-init|divides the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s), matrix math applies if used on arrays|`a /= 16` and `a b /: 16 8`|`a := a / 16` and `a b : (a / 16) (b / 8)`|
+|*=|*:|mul-assign|mul-init|multiplies the value(s) of the right expression to the value held by the variable(s) and assigns the result to the variable(s), matrix math applies if used on arrays|`a *= 16` and `a b *: 16 8`|`a := a * 16` and `a b : (a * 16) (b * 8)`|
 |^=|^:|power-assign|power-init|gets the result(s) of the variable(s) raised to the power of the expression and assigns it to the variable(s)|`a ^= 16` and `a b ^: 16 8`|`a := a ^ 16` and `a b : (a ^ 16) (b ^ 8)`|
 |%=|%:|mod-assign|mod-init|divides the value(s) of the left expression to the value held by the variable(s) and assigns the remainder to the variable(s)|`a %= 16` and `a b %: 16 8`|`a := a % 16` and `a b : (a % 16) (b % 8)`|
