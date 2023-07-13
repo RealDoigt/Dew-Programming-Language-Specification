@@ -103,13 +103,13 @@ Unary operators are prefix operators with only one parameter.
 |**|power2|arithmetic|multiplies the operand, which must be a variable, by itself|
 | \ |sqrt|arithmetic|returns the square root of the operand, which must be a positive number|
 |!|not|binary|returns the result of inverting the bits of the operand|
-|-|minus-arr|array|returns a new array with all the numbers of the array now of the opposite sign|
-|+|plus-arr|array|returns a new array with all the absolute values of the numbers in the array| 
-|--|dec-arr|array|decrements all the elements of the array|
-|++|inc-arr|array|increments all the elements of the array|
-|**|p2-arr|array|multiplies all the elements of the array by themselves|
-| \ |sqrt-arr|array|returns a new array with the square roots of all the elements of the array|
-|!|inv-arr|array|returns a new array with bits of all the elements the array inverted|
+|-|minusarr|array|returns a new array with all the numbers of the array now of the opposite sign|
+|+|plusarr|array|returns a new array with all the absolute values of the numbers in the array| 
+|--|decarr|array|decrements all the elements of the array|
+|++|incarr|array|increments all the elements of the array|
+|**|p2arr|array|multiplies all the elements of the array by themselves|
+| \ |sqrtarr|array|returns a new array with the square roots of all the elements of the array|
+|!|invarr|array|returns a new array with bits of all the elements the array inverted|
 |!!|pop|array|returns and removes the last element of the array|
 |$|length|array|returns the length of the array|
 |~|join|array|if the array is multidimensional, it returns a new array with all the arrays merged into one. If it's an array of strings, it returns all the strings concatenated into one string. If it's a single dimension array of chars, it creates a string.|
