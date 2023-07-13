@@ -164,10 +164,12 @@ A string is in almost every way an array of char. There are only a few differenc
 * Dew strings, just like properly formatted C strings, use the null terminator to indicate the end of a string.
 
 #### Bits
-On the surface, bits look like an array of bools. However in truth, the bits type is not a real array. It's just syntax sugar. One can use bits variables as if one were using an array. The bits type is compatible with all array operations exception concatenation. The bits type cannot be made into a flexible array either. Because the bits type is really just a byte, it is compatible with all operators and functions that work on bytes.
+On the surface, bits look like an array of bools. However in truth, the bits type is not a real array. It's just syntax sugar. One can use bits variables as if one were using an array. The bits type is not compatible with array operations except the index operators. The bits type cannot be made into a flexible array either. Because the bits type is really just a byte, it is compatible with all operators and functions that work on bytes.
 
 #### Maps
 Maps are declared the same way a normal array would be declared, however the type of the index must be declared within the index operators like in this example: `int[string] mymap`. Maps are always flexible. To initialize the value of map, one separate the pairs with commas `,` with the key first and the value second like in this example: `int[string] villain rankings := ["Darth Vader" 10, "The Goblin" 2, "Blackbear" 7, "Pain" 5]`
+
+
 
 ### References
 The `ref` keyword is used in function signatures and function calls on parameters which hold a copy of the address of the variable rather than a copy of the variable's value. Dereferencing is done automatically.
