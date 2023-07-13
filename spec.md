@@ -278,7 +278,7 @@ The assign and initialize operators can also be used on variables which have alr
 Custom types can be defined as aliases using the `enum` and `mode` keywords. These types are should ideally be handled at compile time or by a preprocessor.
 
 ### Mode
-The `mode` keyword is used for simple type aliases. Whether it is used as a way to save some typing time or as a way to more clearly and visually establish API equivalences between languages and frameworks. The basic syntax is `mode custom_type_name is <type>`. A more advanced syntax can be used for array types: `mode custom_array_type(n) is \<array type>\[n]`
+The `mode` keyword is used for simple type aliases. Whether it is used as a way to save some typing time or as a way to more clearly and visually establish API equivalences between languages and frameworks. The basic syntax is `mode custom_type_name is <type>`. A more advanced syntax can be used for array types: `mode custom_array_type(n m etc) is \<array type>\[n]`
 
 Example 1:
 ```dew
@@ -316,4 +316,45 @@ do
   vc := c5 ~ vc
   echo(~vc) # prints Hello world
 od
+```
+
+### Enum
+The `enum` keyword is used for compile-time/pre-processor constants. Enums have three different syntaxes:
+1. `enum type_name is expression`
+2. `enum type_name(n m etc) is expression`
+3. `enum type_name as enum_member1 enum_member2 enum_member3 sa`
+
+Example 1:
+```dew
+enum WHITE is $xFFFFFF
+
+proc void main
+do
+  draw_pixel(0 0 WHITE)
+od
+```
+
+Example 2:
+```dew
+struct color do byte r g b a od
+enum BLUE(alpha) is init color set 0 0 255 alpha tse
+
+proc void main
+do
+  draw_pixel(15 20 BLUE(255))
+od
+```
+
+Example 3:
+```dew
+enum WEEKDAYS
+as
+  SUNDAY
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+sa
 ```
