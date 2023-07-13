@@ -1,4 +1,38 @@
- # Dew Programming Language Specification
+# Dew Programming Language Specification
+
+* [Introduction](spec.md#introduction)
+* [Comments](spec.md#comments)
+* [Identifiers](spec.md#identifiers)
+* [Operators](spec.md#binary-logical-boolean-arithmetic-and-array-operators)
+  * [Array Operators](spec.md#array-operators)
+  * [Unary Operators](spec.md#unary-operators)
+* [Literals](spec.md#literals)
+  * [Boolean](spec.md#boolean)
+  * [String](spec.md#string)
+  * [Character](spec.md#character)
+  * [Numeric](spec.md#numeric)
+  * [Escape Sequences](spec.md#escape-sequences)
+* [Variables and Types](spec.md#variables-and-types)
+  * [Types](spec.md#types)
+    * [Type Table](spec.md#type-table)
+  * [Type Families](spec.md#type-families)
+  * [Arrays](spec.md#arrays)
+    * [Flexible Arrays](spec.md#flexible-arrays)
+    * [Strings](spec.md#strings)
+    * [Bits](spec.md#bits)
+    * [Maps](spec.md#maps)
+    * [Multidimensional Arrays](spec.md#multidimensional-arrays)
+  * [References](spec.md#references)
+  * [Initialising a Variable](spec.md#initialising-a-variable)
+    * [By Doing Nothing](spec.md#by-doing-nothing)
+    * [Using the Assign Operator](spec.md#using-the-assign-operator)
+    * [Using the Initialize Operator](spec.md#using-the-initialize-operator)
+    * [Using the Extract Operator](spec.md#using-the-extract-operator)
+    * [Using Specialized Variants of the Assign and Initialize Operators](spec.md#using-specialized-variants-of-the-assign-and-initialize-operators)
+* [Type Aliases](spec.md#type-aliases)
+  * [Mode](spec.md#mode)
+  * [Enum](spec.md#enum)
+
 ## Introduction
 Dew is a high level programming language intended for experimenting with niche concepts. It is called Dew because it is Doigt's first serious language project and dew usually appears during the morning, which is the first part of the day. Dew's syntax is highly inspired by Algol 68, Bash and B as well as more modern languages such as D. As far as the author is aware, there is only one active project working on a Dew compiler and it is his own project, which is far from complete. This language specification doesn't describe what current compiler(s) can do but what they should do.
 
@@ -271,7 +305,7 @@ do
   echo(g) # prints 10
 od
 ```
-### Assiging Values Using Speciliazed Variants of the Assign and Initialize Operators
+### Using Specialized Variants of the Assign and Initialize Operators
 The assign and initialize operators can also be used on variables which have already been assigned a value. However, there are many specialised variants of these two operators for common usecases.
 
 |assign variant|initialize variant|assign name|initialize name|definition|examples|equivalent example|
