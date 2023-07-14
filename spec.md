@@ -404,3 +404,13 @@ as
   SATURDAY
 sa
 ```
+## Complex Types
+
+## Callables
+In Dew, a callable is what is called a function in other languages. There are four types of callables:
+* Functions (keyword: `func`) are pure callables, meaning that for the same input, they always produce the same output and no side effect is allowed. No random numbers, no modifying modifying variables outside the callable's scope nor any references and no IO. If a function is not pure, then the compiler should refuse to compile.
+* Methods (keyword: `meth`) are callables that always produce the same output for the same input, but side effects are allowed.
+* Actions (keyword: `actn`) are callables that are not allowed to have side effects. However, they are not guarrenteed to always produce the same output for the same input.
+* Procedures (keyword: `proc`) are completely impure callables with absolutely no guarantees.
+
+To declare a callable in Dew, the type of the callable goes first, followed by the return type then the name and the (optional) paramater list enclosed within parentheses. If there are no paramaters, the parentheses can be omitted or left empty. Then follows an enclosing `do`/`od` code block, within which the callable's code is written. If a callable only has one line of code, the `then` keyword can be used.
