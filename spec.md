@@ -432,7 +432,14 @@ as
   SATURDAY
 sa
 ```
-## Complex Types
+## Control Flow
+Control flow is almost every classic branching intruction where there's a choice involved, so conditionals and loops.
+
+### Conditionals
+A conditional is a statement which indicates that the code which follows is only to be executed once and if a condition(s) is satisfied. The way satisfaction is obtained is by using a boolean expression which returns true.
+
+#### If
+
 
 ## Callables
 In Dew, a callable is what is called a function in other languages. There are four types of callables:
