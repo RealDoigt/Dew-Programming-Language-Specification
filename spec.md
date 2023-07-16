@@ -15,7 +15,7 @@
 * [Code Blocks](spec.md#code-blocks)
   * [Do](spec.md#do)
     * [Then](spec.md#then)
-  * [As]
+  * [As](spec.md#as)
     * [Such](spec.md#such) 
 * [Variables and Types](spec.md#variables-and-types)
   * [Types](spec.md#types)
