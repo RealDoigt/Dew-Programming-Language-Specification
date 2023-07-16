@@ -516,12 +516,30 @@ od
 #### Else
 If none of the conditionals in a chain are executed, the `else`, which should be last in the chain, will have its code block executed. It doesn't come with a condition. The `else` is optional in an if/un/elif/elun chain, but it is required in a when/once chain.
 
-Example 1:
+Example else usage with if, elun and elif:
 ```dew
 if age <= 12 then echo('*nYou are a child.')
 elun age >= 18 then echo('*nYou are a teen.')
 elif age >= 65 then echo('*nYou are an elder.')
 else then echo('*nYou are an adult of working age.')
+```
+
+#### Once
+`once` is a shortcut for writing an if/un/elif/elun/else chain. It starts with `once`, the variable to evaluate then, optionally, an operator or a boolean. function/procedure which takes exactly two parameters. The first match in the `once` will be executed. If there is no match, the `else` will be executed. The `once` uses an alternative code block syntax where each case starts with `=>` followed by a list of values separated by commas `,`. If the code is only one line, then it can also be typed out on the same line, otherwise it follows on separate lines.
+
+```dew
+once age <
+do
+  => 12 echo("You*'re very young.")
+  => 16 echo('You*'re young.')
+  => 20 echo('You*'re still young.')
+  => 26
+        echo('You*'re getting older.
+        echo('but don*'t worry because the night is still young.')
+  => 30 echo('You*'re getting older.')
+  => 50 echo('You*'re officially old')
+  => else echo('You are either considering or enjoying retirement!')
+od
 ```
 
 ## Callables
