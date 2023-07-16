@@ -12,7 +12,7 @@
   * [Character](spec.md#character)
   * [Numeric](spec.md#numeric)
   * [Escape Sequences](spec.md#escape-sequences)
-* [Code Blocks](spec.md#literals)
+* [Code Blocks](spec.md#code-blocks)
   * [Do](spec.md#do)
     * [Then](spec.md#then)
   * [As]
@@ -183,6 +183,23 @@ Escape sequences are special character sequences which begin with an asterisk `*
 | vertical tabulation| \*v|
 | bell |\*a|
 | form feed| \*f|
+
+## Code Blocks
+Code blocks are areas in the code, indicated by a `do`/`od` pair, `as`/`sa` pair or their one-line shortcut variants, which instructions or list of properties can be written.
+
+### Do
+A `do` code block is for instructions. It is terminated by the inverted form of `do`; `od`. A `do` block can span multiple lines or only one line. It can be written using Allman style only, but whether to enforce that standard or not is up to the compiler.
+
+Example with a hello world program using both accepted forms:
+```dew
+proc main
+do
+  echo("Hello, World!")
+od
+```
+```dew
+proc main do echo("Hello, World!") od
+```
 
 ## Variables and Types
 Declaring a variable in Dew is done by typing the type information with the modifier(s) before the type name then the name of the variable. Optionally, it may also be initialised with the assign operator, the initilize operator or the extract operator as well as a few other specialised assign operators.
