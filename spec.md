@@ -456,17 +456,18 @@ do
 od
 ```
 
+By default, enum members are aliases for integer values starting from zero. However one can change the value of an enum member at any point and the incrementation will start from there. The `is` keyword is used to set a non default value to an enum number.
 Example 3:
 ```dew
 enum WEEKDAYS
 as
-  SUNDAY
-  MONDAY
-  TUESDAY
-  WEDNESDAY
-  THURSDAY
-  FRIDAY
-  SATURDAY
+  SUNDAY is 1
+  MONDAY # 2
+  TUESDAY # 3
+  WEDNESDAY is 5
+  THURSDAY # 6
+  FRIDAY # 7
+  SATURDAY # 8
 sa
 ```
 ## Control Flow
