@@ -188,7 +188,7 @@ Escape sequences are special character sequences which begin with an asterisk `*
 Code blocks are areas in the code, indicated by a `do`/`od` pair, `as`/`sa` pair or their one-line shortcut variants, which instructions or list of properties can be written.
 
 ### Do
-A `do` code block is for instructions. It is terminated by the inverted form of `do`; `od`. A `do` block can span multiple lines or only one line. It can be written using Allman style only, but whether to enforce that standard or not is up to the compiler.
+A `do` code block is for instructions. It is terminated by the inverted form of `do`; `od`. A `do` block can span multiple lines or only one line. It can be written using Allman style only, but whether to enforce that standard or not is up to the compiler. Do blocks can be left empty.
 
 Example with a hello world program using both accepted forms:
 ```dew
@@ -201,6 +201,16 @@ od
 proc main do echo("Hello, World!") od
 ```
 
+#### Then
+`then` is an alternative keyword which can be used when a code block would only be made of one single line. Then blocks cannot be left empty. 
+```dew
+proc main then echo("Hello, World!")
+```
+
+Then blocks can be chained. In the below example, a program prints out all the arguments of main. The if is not necessary since the foreach would not execute anyways if there are no arguments, but it was just demonstrate that the `then` keyword can be chained indefinitely.
+```dew
+proc main(string args) then if count(args) > 0 then foreach string arg of args then echo(arg)
+```
 ## Variables and Types
 Declaring a variable in Dew is done by typing the type information with the modifier(s) before the type name then the name of the variable. Optionally, it may also be initialised with the assign operator, the initilize operator or the extract operator as well as a few other specialised assign operators.
 
