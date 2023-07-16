@@ -208,6 +208,12 @@ Then blocks can be chained. In the below example, a program prints out all the a
 ```dew
 proc main(string args) then if count(args) > 0 then foreach string arg of args then echo(arg)
 ```
+
+### As
+An `as` code block is for listing properties of some declared type. More specifically, it is used in enums for defining enum members and in components for defining required, expected and included members. Just like a `do` block, the `as` block spans multiple lines and is terminated by an inverted `as`; `sa`.
+
+
+
 ## Variables and Types
 Declaring a variable in Dew is done by typing the type information with the modifier(s) before the type name then the name of the variable. Optionally, it may also be initialised with the assign operator, the initilize operator or the extract operator as well as a few other specialised assign operators.
 
