@@ -499,14 +499,30 @@ od
 ```
 
 #### Un
-`un`, short for unless, works like an inverted if. The result of the condition is inverted before being evaluated. So if the condition returns true, it will return false and if it returns false, it will return true instead. If we recycled the examples above, we'd have to change it to make it work with un:
+`un`, short for "unless", works like an inverted if. The result of the condition is inverted before being evaluated. So if the condition returns true, it will return false and if it returns false, it will return true instead. Using the example above, we'd have to change it to make it work with un:
 ```dew
 meth say_old_if_old(int age)
 do
   un age < OLDAGE then echo("you're old")
 od
 ```
-As with `if`, if the code is only one line, one can forego the do/od pair and use `then` instead.
+
+#### Elif
+`elif`, short for "else if", is an alternative branching condition for a preceding `if`, `un`, `elif` or `elun`. If the preceding conditional evaluated to false, it the code of the `elif` will be evaluated and if true, the code block of the `elif` will be executed. If false, it will be skipped like an ordinary `if`. You can chain multiple elifs and eluns together.
+
+#### Elun
+`elun`, short for "else unless", is the equvilalent else if construct for `un`.
+
+#### Else
+If none of the conditionals in a chain are executed, the `else`, which should be last in the chain, will have its code block executed. It doesn't come with a condition. The `else` is optional in an if/un/elif/elun chain, but it is required in a when/once chain.
+
+Example 1:
+```dew
+if age <= 12 then echo('*nYou are a child.')
+elun age >= 18 then echo('*nYou are a teen.')
+elif age >= 65 then echo('*nYou are an elder.')
+else then echo('*nYou are an adult of working age.')
+```
 
 ## Callables
 In Dew, a callable is what is called a function in other languages. There are four types of callables:
