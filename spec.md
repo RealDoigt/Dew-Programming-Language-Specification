@@ -210,9 +210,10 @@ proc main(string args) then if count(args) > 0 then foreach string arg of args t
 ```
 
 ### As
-An `as` code block is for listing properties of some declared type. More specifically, it is used in enums for defining enum members and in components for defining required, expected and included members. Just like a `do` block, the `as` block spans multiple lines and is terminated by an inverted `as`; `sa`.
+An `as` code block is for listing properties of some declared type. More specifically, it is used in enums for defining enum members and in components for defining required, expected and included members. It can also be used to list overrides for keys. Just like a `do` block, the `as` block spans multiple lines and is terminated by an inverted `as`; `sa`. Elements are separated by new lines.
 
-
+#### Such
+`such` is an alternative keyword which can be used to make an `as` block on one line. Elements are separated by white space. To keep the code legible, tt is recommend to use it only when there are few elements to list. Also, one can no longer use the keyword `is` to give a value to an enum member or to override a key.
 
 ## Variables and Types
 Declaring a variable in Dew is done by typing the type information with the modifier(s) before the type name then the name of the variable. Optionally, it may also be initialised with the assign operator, the initilize operator or the extract operator as well as a few other specialised assign operators.
