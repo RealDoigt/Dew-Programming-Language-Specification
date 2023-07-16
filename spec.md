@@ -188,7 +188,7 @@ Escape sequences are special character sequences which begin with an asterisk `*
 Code blocks are areas in the code, indicated by a `do`/`od` pair, `as`/`sa` pair or their one-line shortcut variants, which instructions or list of properties can be written.
 
 ### Do
-A `do` code block is for instructions. It is terminated by the inverted form of `do`; `od`. A `do` block can span multiple lines or only one line. It can be written using Allman style only, but whether to enforce that standard or not is up to the compiler. Do blocks can be left empty.
+A `do` code block is for instructions. It is terminated by the inverted form of `do`; `od`. A `do` block will span multiple lines. It can be written using Allman style only, but whether to enforce that standard or not is up to the compiler. Do blocks can be left empty.
 
 Example with a hello world program using both accepted forms:
 ```dew
@@ -196,9 +196,6 @@ proc main
 do
   echo("Hello, World!")
 od
-```
-```dew
-proc main do echo("Hello, World!") od
 ```
 
 #### Then
@@ -472,20 +469,15 @@ Control flow is almost every classic branching intruction where there's a choice
 A conditional is a statement which indicates that the code which follows is only to be executed once and if a condition(s) is satisfied. The way satisfaction is obtained is by using a boolean expression which returns true.
 
 #### If
-`if` is the keyword used in Dew for making an if conditional statement. A code inside the `do`/`od` tags can be left empty, but not when using the shortened syntax with `then`. The condition can also not be left empty. The normal syntax for an if is:
+`if` is the keyword used in Dew for making an if conditional statement. A code block must follow an if statement.
 ```dew
 if ¢insert condition here¢
 do
   # your code here
 od
 ```
-Using the shortened syntax:
-```dew
-if ¢condition¢ then # your code here
-```
-Concrete example where a method prints out "you're old" to the console if the variable age is higher than 49.
 
-Version with do/od:
+Concrete example where a method prints out "you're old" to the console if the variable age is higher than 49.
 ```dew
 enum OLDAGE is 50
 
@@ -497,16 +489,6 @@ do
   od
 od
 ```
-Version with then:
-```dew
-enum OLDAGE is 50
-
-meth say_old_if_old(int age)
-do
-  if age >= OLDAGE then echo("you're old")
-od
-```
-`then` can only be used when there's only a single line of code and works with other statements that can have code blocks.
 
 #### Un
 `un`, short for unless, works like an inverted if. The result of the condition is inverted before being evaluated. So if the condition returns true, it will return false and if it returns false, it will return true instead. If we recycled the examples above, we'd have to change it to make it work with un:
