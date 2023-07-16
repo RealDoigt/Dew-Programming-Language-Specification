@@ -458,7 +458,7 @@ enum OLDAGE is 50
 
 meth say_old_if_old(int age)
 do
-  if age >= 50
+  if age >= OLDAGE
   do
     echo("you're old")
   od
@@ -470,10 +470,20 @@ enum OLDAGE is 50
 
 meth say_old_if_old(int age)
 do
-  if age >= 50 then echo("you're old")
+  if age >= OLDAGE then echo("you're old")
 od
 ```
-Then can only be used when there's only a single line of code and works with other statements that can have code blocks.
+`then` can only be used when there's only a single line of code and works with other statements that can have code blocks.
+
+#### Un
+`un`, short for unless, works like an inverted if. The result of the condition is inverted before being evaluated. So if the condition returns true, it will return false and if it returns false, it will return true instead. If we recycled the examples above, we'd have to change it to make it work with un:
+```dew
+meth say_old_if_old(int age)
+do
+  un age < OLDAGE then echo("you're old")
+od
+```
+As with if, if the code is only one line, one can forego the do/od pair and use `then` instead.
 
 ## Callables
 In Dew, a callable is what is called a function in other languages. There are four types of callables:
