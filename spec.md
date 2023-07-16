@@ -439,13 +439,47 @@ Control flow is almost every classic branching intruction where there's a choice
 A conditional is a statement which indicates that the code which follows is only to be executed once and if a condition(s) is satisfied. The way satisfaction is obtained is by using a boolean expression which returns true.
 
 #### If
+`if` is the keyword used in Dew for making an if conditional statement. A code inside the `do`/`od` tags can be left empty, but not when using the shortened syntax with `then`. The condition can also not be left empty. The normal syntax for an if is:
+```dew
+if ¢insert condition here¢
+do
+  # your code here
+od
+```
+Using the shortened syntax:
+```dew
+if ¢condition¢ then # your code here
+```
+Concrete example where a method prints out "you're old" to the console if the variable age is higher than 49.
 
+Version with do/od:
+```dew
+enum OLDAGE is 50
+
+meth say_old_if_old(int age)
+do
+  if age >= 50
+  do
+    echo("you're old")
+  od
+od
+```
+Version with then:
+```dew
+enum OLDAGE is 50
+
+meth say_old_if_old(int age)
+do
+  if age >= 50 then echo("you're old")
+od
+```
+Then can only be used when there's only a single line of code and works with other statements that can have code blocks.
 
 ## Callables
 In Dew, a callable is what is called a function in other languages. There are four types of callables:
 * Functions (keyword: `func`) are pure callables, meaning that for the same input, they always produce the same output and no side effect is allowed. No random numbers, no modifying modifying variables outside the callable's scope nor any references and no IO. If a function is not pure, then the compiler should refuse to compile.
 * Methods (keyword: `meth`) are callables that always produce the same output for the same input, but side effects are allowed.
-* Actions (keyword: `actn`) are callables that are not allowed to have side effects. However, they are not guarrenteed to always produce the same output for the same input.
+* Actions (keyword: `actn`) are callables that are not allowed to have side effects. However, they are not guaranteed to always produce the same output for the same input.
 * Procedures (keyword: `proc`) are completely impure callables with absolutely no guarantees.
 
 To declare a callable in Dew, the type of the callable goes first, followed by the return type then the name and the (optional) paramater list enclosed within parentheses. If there are no paramaters, the parentheses can be omitted or left empty. Then follows an enclosing `do`/`od` code block, within which the callable's code is written. If a callable only has one line of code, the `then` keyword can be used.
