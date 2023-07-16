@@ -483,7 +483,7 @@ do
   un age < OLDAGE then echo("you're old")
 od
 ```
-As with if, if the code is only one line, one can forego the do/od pair and use `then` instead.
+As with `if`, if the code is only one line, one can forego the do/od pair and use `then` instead.
 
 ## Callables
 In Dew, a callable is what is called a function in other languages. There are four types of callables:
