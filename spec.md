@@ -616,6 +616,29 @@ short int age
 until age > 0 then age := read_sint()
 ```
 
+#### Forever
+A `forever` loop will, as its name implies, run forever. The only way for the forever loop to stop is to force it to stop by using an exit statement (`><`) or a break then return statement (`->`).
+
+Example of using a forever loop with an exit statement:
+```dew
+use raylib
+
+proc void main
+do
+  init_window(1080 720 "A raylib game")
+  set_target_fps(60)
+
+  forever
+  do
+    begin_drawing()
+    clear_background()
+    if window_should_close() then >< this
+  od
+
+  end_drawing()
+od
+```
+
 ## Callables
 In Dew, a callable is what is called a function in other languages. There are four types of callables:
 * Functions (keyword: `func`) are pure callables, meaning that for the same input, they always produce the same output and no side effect is allowed. No random numbers, no modifying modifying variables outside the callable's scope nor any references and no IO. If a function is not pure, then the compiler should refuse to compile.
