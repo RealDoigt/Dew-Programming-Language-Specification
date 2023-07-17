@@ -593,6 +593,29 @@ od
 other then # code here
 ```
 
+### Loops
+A loop is a section of code which is executed repeatedly. Dew has many different kinds of loops to choose from.
+
+#### While
+A `while` loop is a loop which repeats the following code block while the condition is true. The basic syntax of this loop is `while condition do/then`.
+
+A `while` loop example which is used to validate user input:
+```dew
+short int age
+    
+while age <= 0 then age := read_sint()
+```
+
+#### Until
+An `until` loop is a `while` loop which has the result of condition inverted before being evaluated. So if the condition is true, it will evaluate to false and vice versa.
+
+The same example as above, modified to work with `until`:
+```dew
+short int age
+    
+until age > 0 then age := read_sint()
+```
+
 ## Callables
 In Dew, a callable is what is called a function in other languages. There are four types of callables:
 * Functions (keyword: `func`) are pure callables, meaning that for the same input, they always produce the same output and no side effect is allowed. No random numbers, no modifying modifying variables outside the callable's scope nor any references and no IO. If a function is not pure, then the compiler should refuse to compile.
