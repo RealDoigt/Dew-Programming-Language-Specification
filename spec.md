@@ -46,7 +46,7 @@
     * [Else](spec.md#else)
     * [Once](spec.md#once)
     * [When](spec.md#when)
-    * [Vech](spec.md#verc)
+    * [Vech](spec.md#vech)
     * [Otch](spec.md#otch)
     * [Other](spec.md#other)
   * [Loops](spec.md#loops)
