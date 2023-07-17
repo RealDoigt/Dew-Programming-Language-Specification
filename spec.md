@@ -46,7 +46,9 @@
     * [Else](spec.md#else)
     * [Once](spec.md#once)
     * [When](spec.md#when)
-    * [Vers](spec.md#vers)
+    * [Vech](spec.md#verc)
+    * [Otch](spec.md#otch)
+    * [Other](spec.md#other)
   * [Loops](spec.md#loops)
     * [While](spec.md#while)
     * [Until](spec.md#until)
@@ -556,6 +558,39 @@ do
   CHOCOLATE => echo("A true classic.*n")
   BANANA => echo("You like it weird and I respect that.*n")
 od
+```
+
+#### Vech
+`vech`\*, short for "version check", is for code that is only going to be executed under certain compiler version or target system. Ideally, this should be evaluated in the preprocessor or at compile time. The codes or names used are implementation defined. `and` and `or` can be used if there is more than one platform for which the code should run on.
+
+Abstract example:
+```dew
+vech LINUX and ARM64
+do
+  # code here
+od
+```
+\*Whatever you prefer between /vɛt͡ʃ/ or /vɛk/ is good pronunciation.
+
+#### Otch
+`otch`\*, short for "other version check", is the else if construct of the version check.
+
+```dew
+vech GAMEBOY then # code here
+otch GAMEBOY_COLOR then # code here
+```
+\*Whatever you prefer between /ɒtʃ/, /ɑt͡ʃ/, /ɒk/ or /ɑk/ is good pronunciation.
+
+#### Other
+`other`, short for "otherwise", is the else construct of the version check.
+
+```dew
+vech DEWC_11
+do
+  # code here
+od
+
+other then # code here
 ```
 
 ## Callables
