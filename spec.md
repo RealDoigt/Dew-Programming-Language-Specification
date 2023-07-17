@@ -597,7 +597,7 @@ other then # code here
 A loop is a section of code which is executed repeatedly. Dew has many different kinds of loops to choose from.
 
 #### While
-A `while` loop is a loop which repeats the following code block while the condition is true. The basic syntax of this loop is `while condition do/then`.
+A `while` loop is a loop which repeats the code block which follows while the condition is true. The basic syntax of this loop is `while condition do/then`.
 
 A `while` loop example which is used to validate user input:
 ```dew
