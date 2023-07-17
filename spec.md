@@ -525,7 +525,7 @@ else then echo('*nYou are an adult of working age.')
 ```
 
 #### Once
-`once` is a shortcut for writing an if/un/elif/elun/else chain. It starts with `once`, the variable to evaluate then, optionally, an operator or a boolean. function/procedure which takes exactly two parameters. The default operator is `=`. The first match in the `once` will be executed. If there is no match, the `else` will be executed. The `once` uses an alternative code block syntax where each case starts with the a list of values separated by spaces followed by an arrow `=>`. If the code is only one line, then it can also be typed out on the same line, otherwise it follows on separate lines.
+`once` is a shortcut for writing an if/un/elif/elun/else chain. It starts with `once`, the variable to evaluate then, optionally, an operator or a booleam callable which takes exactly two parameters. The callable's name should be typed without parentheses. The default operator is `=`. The first match in the `once` will be executed. If there is no match, the `else` will be executed. The `once` uses an alternative code block syntax where each case starts with the a list of values separated by spaces followed by an arrow `=>`. If the code is only one line, then it can also be typed out on the same line, otherwise it follows on separate lines.
 
 ```dew
 # selects and execute the first case where age is under the value being tested
@@ -548,9 +548,15 @@ od
 
 Example using an enum
 ```dew
-when icecream_fal is_valid
-
-
+# icecream_flavours is an array of custom enum type ICECREAM_FLAVOURS 
+when icecream_flavours has
+do
+  # note: the first case will trigger on two seperate values
+  STRAWBERRY VANILLA => echo("You have some boring flavors.*n")
+  CHOCOLATE => echo("A true classic.*n")
+  BANANA => echo("You like it weird and I respect that.*n")
+od
+```
 
 ## Callables
 In Dew, a callable is what is called a function in other languages. There are four types of callables:
