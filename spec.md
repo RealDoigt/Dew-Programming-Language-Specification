@@ -646,6 +646,9 @@ A `foreach` loop is a loop which iterates over each element of an array, string 
 `for` is a loop which repeats until the loop variable is equal to the set limit. For loops either increment (`upto`) or decrement (`downto`) by 1 the loop variable.
 The basic syntax of a `for` loop is `for var_name := value upto/downto limit do/then`. If the value change should be different than 1, then it takes this form: `for var_name := value to limit by change do/then`. 
 
+#### Repeat
+`repeat` is a very simple loop where it repeats the code block for a set number of times. The syntax is as follows: `repeat value do/then`.
+
 ## Callables
 In Dew, a callable is what is called a function in other languages. There are four types of callables:
 * Functions (keyword: `func`) are pure callables, meaning that for the same input, they always produce the same output and no side effect is allowed. No random numbers, no modifying modifying variables outside the callable's scope nor any references and no IO. If a function is not pure, then the compiler should refuse to compile.
