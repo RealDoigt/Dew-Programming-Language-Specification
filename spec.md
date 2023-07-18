@@ -649,6 +649,9 @@ The basic syntax of a `for` loop is `for var_name := value upto/downto limit do/
 #### Repeat
 `repeat` is a very simple loop where it repeats the code block for a set number of times. The syntax is as follows: `repeat value do/then`.
 
+### Exit
+The exit `><` statement can be used to forcibly break from loops. `>< all` breaks from all the nested loops. `>< this` breaks from the currently executing loop. `>< to n` will jump the program back up in the nested loops until it reaches the nth parent loop.
+
 ## Callables
 In Dew, a callable is what is called a function in other languages. There are four types of callables:
 * Functions (keyword: `func`) are pure callables, meaning that for the same input, they always produce the same output and no side effect is allowed. No random numbers, no modifying modifying variables outside the callable's scope nor any references and no IO. If a function is not pure, then the compiler should refuse to compile.
