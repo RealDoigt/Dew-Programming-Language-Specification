@@ -1,5 +1,5 @@
 # Dew Programming Language Specification
-
+NOTE: This document often refers to imaginary variables like "value". In any case, those values can come from any expression which generates a value. Where indicated otherwise, the use of the expression operators `()` is mandatory for using an expression.
 * [Introduction](spec.md#introduction)
 * [Comments](spec.md#comments)
 * [Identifiers](spec.md#identifiers)
@@ -659,4 +659,61 @@ In Dew, a callable is what is called a function in other languages. There are fo
 * Actions (keyword: `actn`) are callables that are not allowed to have side effects. However, they are not guaranteed to always produce the same output for the same input.
 * Procedures (keyword: `proc`) are completely impure callables with absolutely no guarantees.
 
-To declare a callable in Dew, the type of the callable goes first, followed by the return type then the name and the (optional) paramater list enclosed within parentheses. If there are no paramaters, the parentheses can be omitted or left empty. Then follows an enclosing `do`/`od` code block, within which the callable's code is written. If a callable only has one line of code, the `then` keyword can be used.
+To declare a callable in Dew, the type of the callable goes first, followed by the return type then the name and the (optional) paramater list enclosed within parentheses. If there are no paramaters, the parentheses can be omitted or left empty.
+
+### Return
+There are three ways to exit a callable:
+* The exit `><` statement is used to exit from a callable. If there was no set return value, it will return the default type value of the function.
+* The break and return `->` statement simultaneously sets the return value then exits the callable. The proper syntax is `-> value`
+* The program reaches the end of the callable's code block, in which case the behaviour is identical to using an `><`.
+Only `><` can be used to exit a void callable.
+
+The return `<-` statement sets the return value without exiting the callable. The proper syntax is `<- value` The value in the return value can be accessed with the dollar sign `$`.
+
+Example 1:
+```dew
+proc int post_inc(ref int x)
+do
+  <- x
+  ++x
+od
+```
+
+Example 2:
+```dew
+func int get_cash_reward(int player_level)
+do
+  when player_level >=
+  do
+    => 1 <- 10
+    => 5 <- $ * 2
+    => 10 <- $ * 10
+  od
+od
+```
+
+Example 3:
+```dew
+meth void say_moo(ANIMALS a)
+do
+  if a <> COW then ><
+  echo("Moo!*n")
+od
+```
+
+Example 4:
+```dew
+func int fib(int n)
+do
+  if n < 2 then -> n
+  -> fib(n - 1) + fib(n - 2)
+od
+```
+
+Example 5:
+```dew
+func int factorial int n)
+do
+  if n = 0 then -> 1
+  -> n * factorial(n - 1)
+od
