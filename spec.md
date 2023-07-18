@@ -671,6 +671,8 @@ Only `><` can be used to exit a void callable.
 
 The return `<-` statement sets the return value without exiting the callable. The proper syntax is `<- value` The value in the return value can be accessed with the dollar sign `$`.
 
+### Callable Examples
+
 Example 1:
 ```dew
 proc int post_inc(ref int x)
