@@ -163,11 +163,11 @@ A string literal is defined as a sequence of characters enclosed between a pair 
 A character literal is defined as a sequence of characters enclosed between a pair of single quotes `'`.
 
 ### Numeric
-A numeric literal is defined as a sequence of case sensitive characters which represents binary, octal, decimal and hexadecimal numbers (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F). Numbers can be separated by underscores `_` for added legibility. Each non-decimal sequence must start with a dollar sign `$` then a lower case letter representing that base: 
-* Binary: $b1010_1011
-* Octal: $o253
+A numeric literal is defined as a sequence of case sensitive characters which represents binary, octal, decimal and hexadecimal numbers (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F). Numbers can be separated by underscores `_` for added legibility. Each non-decimal sequence must start with an at sign `@` then a lower case letter representing that base: 
+* Binary: @b1010_1011
+* Octal: @o253
 * Decimal: 171
-* Hexadecimal: $xAB
+* Hexadecimal: @xAB
 Negative numbers start with a minus sign `-` and the minus sign can only be applied to decimal numbers.
 
 ### Escape Sequences
@@ -439,7 +439,7 @@ The `enum` keyword is used for compile-time/pre-processor constants. Enums have 
 
 Example 1:
 ```dew
-enum WHITE is $xFFFFFF
+enum WHITE is @xFFFFFF
 
 proc void main
 do
