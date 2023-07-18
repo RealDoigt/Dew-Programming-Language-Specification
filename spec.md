@@ -642,6 +642,10 @@ od
 #### Foreach
 A `foreach` loop is a loop which iterates over each element of an array, string or bits variable. The syntax of a `foreach` loop is `foreach [ref] type var_name of array_name do/then`. A multidimensional array's elements are considered to be arrays themselves, so at least another foreach loop would be necessary to iterate over every single array in the multidimensional array depending on the number of dimensions. `ref` is an optional keyword which indicates that the temporary variable holds a reference rather than a copy of the element. That means using `ref` will change the value of the variable if that value is changed in the `foreach` loop. Otherwise, no changes should apply. `ref` doesn't work with bits, because it is impossible to hold a reference to a bit in a byte.
 
+#### For
+`for` is a loop which repeats until the loop variable is equal to the set limit. For loops either increment (`upto`) or decrement (`downto`) by 1 the loop variable.
+The basic syntax of a `for` loop is `for var_name := value upto/downto limit do/then`. If the value change should be different than 1, then it takes this form: `for var_name := value to limit by change do/then`. 
+
 ## Callables
 In Dew, a callable is what is called a function in other languages. There are four types of callables:
 * Functions (keyword: `func`) are pure callables, meaning that for the same input, they always produce the same output and no side effect is allowed. No random numbers, no modifying modifying variables outside the callable's scope nor any references and no IO. If a function is not pure, then the compiler should refuse to compile.
