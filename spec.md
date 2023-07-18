@@ -449,8 +449,8 @@ od
 
 Example 2:
 ```dew
-struct color do byte r g b a od
-enum BLUE(alpha) is init color set 0 0 255 alpha tse
+struct color then byte r g b a
+enum BLUE(alpha) is set color such 0 0 255 alpha
 
 proc void main
 do
