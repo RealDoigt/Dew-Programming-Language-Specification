@@ -147,7 +147,7 @@ Unary operators are prefix operators with only one parameter.
 | \ |sqrtarr|array|returns a new array with the square roots of all the elements of the array|
 |!|invarr|array|returns a new array with bits of all the elements the array inverted|
 |!!|pop|array|returns and removes the last element of the array|
-|$|length|array|returns the length of the array|
+|@|length|array|returns the length of the array or string|
 |~|join|array|if the array is multidimensional, it returns a new array with all the arrays merged into one. If it's an array of strings, it returns all the strings concatenated into one string. If it's a single dimension array of chars, it creates a string.|
 
 ## Literals
@@ -209,7 +209,7 @@ proc main then echo("Hello, World!")
 
 Then blocks can be chained. In the below example, a program prints out all the arguments of main. The if is not necessary since the foreach would not execute anyways if there are no arguments, but it was just demonstrate that the `then` keyword can be chained indefinitely.
 ```dew
-proc main(string args) then if count(args) > 0 then foreach string arg of args then echo(arg)
+proc main(string args) then if @args > 0 then foreach string arg of args then echo(arg)
 ```
 
 ### As
