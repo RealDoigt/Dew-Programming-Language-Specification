@@ -60,7 +60,9 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
 * [Callables](spec.md#callables)
   * [Return](spec.md#return)
 * [Complex Types](spec.md#complex-types)
+  * [Using a Complex Type](spec.md#using-a-complex-type) 
   * [Struct](spec.md#struct)
+  * [Record](spec.md#record)
   * [Union](spec.md#union)
   * [Comp](spec.md#comp)
     * [Include](spec.md#include)
@@ -720,3 +722,51 @@ do
   if n = 0 then -> 1
   -> n * factorial(n - 1)
 od
+```
+
+## Complex Types
+Complex types are user-defined types which can be made of several variables of different types, which are called fields. Most types can only contain fields, but components can also have callables. 
+
+### Using a Complex Type
+To use a complex type, one must write the type's name, then the variable's name and choose "where" the type will live. Using the `new` keyword will allocate it on the heap, while using `set` will allocate it on the stack. Optionally, the fields of the complex type can be initialised. The fields can be accessed with a dot `.`.
+
+First example without initialising the fields on declaration
+```dew
+struct color then byte r g b
+
+proc void main
+do
+  # allocates on the stack
+  color my_color := set color
+  my_color.r my_color.b : 255
+  draw_pixel(0 0 my_color) # draws a magenta pixel to the screen
+od
+```
+
+Second example with initialising the fields on declaration
+```dew
+struct color then byte r g b
+
+proc void main
+do
+  # allocates on the heap
+  color my_color := new color
+  as
+    r := 10
+    g b : 50
+  sa
+
+  draw_pixel(0 0 my_color)
+od
+```
+
+Alternatively, one can omit the field names on initialisation. The values will be attributed to the fields in the order they were declared in the type.
+```dew
+struct color then byte r g b
+
+proc void main
+do
+  color my_color := new color such 255 255 255
+  draw_pixel(0 0 my_color) # draws white to the screen
+od
+```
