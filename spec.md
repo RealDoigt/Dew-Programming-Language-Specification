@@ -730,7 +730,7 @@ Complex types are user-defined types which can be made of several variables of d
 ### Using a Complex Type
 To use a complex type, one must write the type's name, then the variable's name and choose "where" the type will live. Using the `new` keyword will allocate it on the heap, while using `set` will allocate it on the stack. Optionally, the fields of the complex type can be initialised. The fields can be accessed with a dot `.`.
 
-First example without initialising the fields on declaration
+First example without initialising the fields on declaration\*.
 ```dew
 struct color then byte r g b
 
@@ -742,6 +742,7 @@ do
   draw_pixel(0 0 my_color) # draws a magenta pixel to the screen
 od
 ```
+\*Keep in mind that the variables in the complex type will be automatically assigned a default value if declared without initialising on declaration.
 
 Second example with initialising the fields on declaration
 ```dew
@@ -772,5 +773,7 @@ od
 ```
 
 ### Struct
-
 A `struct`, short for data structure, is an arbitrarily user-defined type which is a grouping of one or more variables of various types.
+
+### Record
+A `record` is a read-only struct. Once the values of a record are initialised, they cannot be changed. A new instance of a record should not be declared without initialising it because otherwise the default values will be assigned to the variables.
