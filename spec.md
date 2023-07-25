@@ -770,3 +770,7 @@ do
   draw_pixel(0 0 my_color) # draws white to the screen
 od
 ```
+
+### Struct
+
+A `struct`, short for data structure, is an arbitrarily user-defined type which is a grouping of one or more variables of various types.
