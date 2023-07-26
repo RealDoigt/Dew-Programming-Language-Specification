@@ -835,7 +835,7 @@ Callables of the same name but from different components are executed in a seque
 
 This behaviour can be altered with `last` and `first` which are callable modifiers that modify the order of calling. However, if callables with the same modifier clash, then the original order is used to sort out the calling order among them.
 
-The `override` keyword will prevent the other callables from being called. If there is more than one `override` for the same simultaneous callable, then the host callable will be the one to be called. If there is no host, then the callable from the last component included will be called. Again, this order can be changed with the `last` and `first` keywords and are subject to the same rules that come with these keywords apply here too.
+The `override` keyword will prevent the other callables from being called. If there is more than one `override` for the same simultaneous callable, then the host callable will be the one to be called. If there is no host, then the callable from the last component included will be called. Again, this order can be changed with the `last` and `first` keywords and are subject to the same rules as explained above.
 
 Note: The host component's callable must be compatible with the other callables. This means that if the host component's callable is a function, then all other callables with that name from other components must also be functions.
 
@@ -846,3 +846,6 @@ Here is a compatibility table:
 |method|yes|yes|no|no|
 |action|yes|no|yes|no|
 |procedure|yes|yes|yes|yes|
+
+#### Key Structure
+The key structure is defined as the elements of a component which are used to establish a bridge between two or more components. When a component has expectations or requirements, they will expect key elements to be there so that it may properly function. These key elements can be callables, specific fields or they can be ambiguous in-betweens of sorts. These are defined with the keywords `key`, `expect`, `require`, `from`, `is`, `let` and `get`.
