@@ -67,6 +67,7 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
   * [Union](spec.md#union)
   * [Comp](spec.md#comp)
     * [Include](spec.md#include)
+    * [Simultaneous Callables](spec.md#simultaneous-callables)
     * [Key Structure](spec.#key-structure)  
 * [Type Casting](spec.md#type-casting)
 * [Templates](spec.md#templates)
@@ -828,3 +829,20 @@ do
 od
 ```
 The example above has the key keyword, which will be explained in [Key Structure](spec.#key-structure).
+
+#### Simultaneous Callables
+Callables of the same name but from different components are executed in a sequence with the first being the host component then following the order in which the callables' respective components were included.
+
+This behaviour can be altered with `last` and `first` which are callable modifiers that modify the order of calling. However, if callables with the same modifier clash, then the original order is used to sort out the calling order among them.
+
+The `override` keyword will prevent the other callables from being called. If there is more than one `override` for the same simultaneous callable, then the host callable will be the one to be called. If there is no host, then the callable from the last component included will be called. Again, this order can be changed with the `last` and `first` keywords and are subject to the same rules that come with these keywords apply here too.
+
+Note: The host component's callable must be compatible with the other callables. This mean that if the host component's callable is a function, then all other callables with that name from other components must also be functions.
+
+Here is a compatibility table:
+|callable type|function|method|action|procedure|
+|-|-|-|-|-|
+|function|yes|no|no|no|
+|method|yes|yes|no|no|
+|action|yes|no|yes|no|
+|procedure|yes|yes|yes|yes|
