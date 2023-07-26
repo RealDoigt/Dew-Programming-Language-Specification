@@ -192,7 +192,7 @@ Escape sequences are special character sequences which begin with an asterisk `*
 | form feed| \*f|
 
 ## Code Blocks
-Code blocks are areas in the code, indicated by a `do`/`od` pair, `as`/`sa` pair or their one-line shortcut variants, which instructions or list of properties can be written.
+Code blocks are areas in the code, indicated by a `do`/`od` pair, `as`/`sa` pair or their one-line shortcut variants, with which instructions or list of properties can be written.
 
 ### Do
 A `do` code block is for instructions. It is terminated by the inverted form of `do`; `od`. A `do` block will span multiple lines. It can be written using Allman style only, but whether to enforce that standard or not is up to the compiler. Do blocks can be left empty.
