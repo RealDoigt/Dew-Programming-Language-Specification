@@ -783,4 +783,46 @@ A `struct`, short for data structure, is an arbitrarily user-defined type which 
 A `record` is a read-only struct. Once the values of a record are initialised, they cannot be changed. A new instance of a record should not be declared without initialising it because otherwise the default values will be assigned to the variables.
 
 ### Union
-A `union` is a struct where only one field of the struct can be used at a time. The total size of the `union` will always be of the larger type. When the other field of the struct that was not use gets assigned a value, it becomes the active field and the other field becomes the useless field. Reading from the inactive field is implementation defined so it could yield garbage data. 
+A `union` is a struct where only one field of the struct can be used at a time. The total size of the `union` will always be of the larger type. When the other field of the struct that was not in use gets assigned a value, it becomes the active field and the other field becomes the useless field. Reading from the inactive field is implementation defined so it could yield garbage data. 
+
+### Comp
+A `comp`, short for component, is an arbitrarily user-defined type which is a grouping of one or more variables and callables of various types.
+
+#### Include
+Components can be combined together or with structs and records to form new types by using the `include` keyword. Include may only appear once inside a `comp`. There is no limit to the quantity of types that can be included. The syntax is `include as/such types`.
+
+Example with only one included type:
+```dew
+struct color then byte r g b
+
+comp alpha_color
+do
+  include such color
+  real a
+od
+```
+
+Example with many includes:
+```dew
+comp car
+do
+  include
+  as
+    motor
+    pilot
+    tank
+  sa
+
+ wheel[4] wheels
+ real drag
+
+ key
+ as
+   wheels is wheels
+   drag is drag
+   capacity from tank is fuel_capacity
+   quantity from tank is fuel_reserves
+ sa
+od
+```
+The example above has the key keyword, which will be explained in [Key Structure](spec.#key-structure).
