@@ -621,9 +621,9 @@ until age > 0 then age := read_sint()
 ```
 
 #### Forever
-A `forever` loop will, as its name implies, run forever. The only way for the forever loop to stop is to force it to stop by using an exit statement (`><`) or a break then return statement (`->`).
+A `forever` loop will, as its name implies, run forever. The only way for the forever loop to stop is to force it to stop.
 
-Example of using a forever loop with an exit statement:
+Example of using a forever loop with a break statement:
 ```dew
 use raylib
 
@@ -636,7 +636,7 @@ do
   do
     begin_drawing()
     clear_background()
-    if window_should_close() then >< this
+    if window_should_close() then break this
   od
 
   end_drawing()
