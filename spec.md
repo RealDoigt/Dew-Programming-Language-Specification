@@ -255,6 +255,8 @@ Type families are used for comparing types, which is only useful for template co
 |text|strings, char|
 |binary|numeric, boolean, char|
 |primitive|binary, text|
+|plural|strings, arrays of any type|
+|array|plural, bits|
 
 ### Arrays
 An array is declared by adding the index operators `[]` after the type. If the size of the array is known in advance, but the elements aren't, one can type the size within the index operators. In all other cases, the index operators can be empty. Following Algol tradition, `ints`, `reals`, `strings`, `bytes` and `bools` are aliases for arrays of their corresponding type.
