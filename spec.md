@@ -779,4 +779,4 @@ A `struct`, short for data structure, is an arbitrarily user-defined type which 
 A `record` is a read-only struct. Once the values of a record are initialised, they cannot be changed. A new instance of a record should not be declared without initialising it because otherwise the default values will be assigned to the variables.
 
 ### Union
-A `union` is a struct where only one field of the struct can be used at a time. The total size of the `union` will always be of the larger type. When the other field of the struct that was not use gets assigned a value, it becomes the active field and the other field becomes the useless field. Reading from the inactive field is implementation defined but could yield garbage data, so one needs to be careful. 
+A `union` is a struct where only one field of the struct can be used at a time. The total size of the `union` will always be of the larger type. When the other field of the struct that was not use gets assigned a value, it becomes the active field and the other field becomes the useless field. Reading from the inactive field is implementation defined so it could yield garbage data. 
