@@ -68,7 +68,7 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
   * [Comp](spec.md#comp)
     * [Include](spec.md#include)
     * [Simultaneous Callables](spec.md#simultaneous-callables)
-    * [Key Structure](spec.#key-structure)  
+    * [Key Structure](spec.md#key-structure)  
 * [Type Casting](spec.md#type-casting)
 * [Templates](spec.md#templates)
 * [Modules](spec.md#modules)
