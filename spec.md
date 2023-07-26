@@ -837,7 +837,7 @@ This behaviour can be altered with `last` and `first` which are callable modifie
 
 The `override` keyword will prevent the other callables from being called. If there is more than one `override` for the same simultaneous callable, then the host callable will be the one to be called. If there is no host, then the callable from the last component included will be called. Again, this order can be changed with the `last` and `first` keywords and are subject to the same rules that come with these keywords apply here too.
 
-Note: The host component's callable must be compatible with the other callables. This mean that if the host component's callable is a function, then all other callables with that name from other components must also be functions.
+Note: The host component's callable must be compatible with the other callables. This means that if the host component's callable is a function, then all other callables with that name from other components must also be functions.
 
 Here is a compatibility table:
 |callable type|function|method|action|procedure|
