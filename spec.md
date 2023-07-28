@@ -59,6 +59,7 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
   * [Break](spec.md#break)
   * [Next](spec.md#next)
 * [Callables](spec.md#callables)
+  * [Sub](spec.md#return)
   * [Return](spec.md#return)
 * [Complex Types](spec.md#complex-types)
   * [Using a Complex Type](spec.md#using-a-complex-type) 
@@ -671,10 +672,13 @@ In Dew, a callable is what is called a function in other languages. There are fo
 
 To declare a callable in Dew, the type of the callable goes first, followed by the return type then the name and the (optional) paramater list enclosed within parentheses. If there are no paramaters, the parentheses can be omitted or left empty.
 
+### Sub
+`sub` is a callable modifier which can only be used on methods and procedures in a component. It is used to indicate that the side effects of a procedure or method are exclusively limited to the fields of the component it is in. The syntax is `sub proc` and `sub meth`. 
+
 ### Return
 There are three ways to exit a callable:
 * The exit `><` statement is used to exit from a callable. If there was no set return value, it will return the default type value of the function.
-* The break and return `->` statement simultaneously sets the return value then exits the callable. The proper syntax is `-> value`
+* The return `->` statement simultaneously sets the return value then exits the callable. The proper syntax is `-> value`
 * The program reaches the end of the callable's code block, in which case the behaviour is identical to using an `><`.
 Only `><` can be used to exit a void callable.
 
@@ -840,12 +844,14 @@ The `override` keyword will prevent the other callables from being called. If th
 Note: The host component's callable must be compatible with the other callables. This means that if the host component's callable is a function, then all other callables with that name from other components must also be functions.
 
 Here is a compatibility table:
-|callable type|function|method|action|procedure|
-|-|-|-|-|-|
-|function|yes|no|no|no|
-|method|yes|yes|no|no|
-|action|yes|no|yes|no|
-|procedure|yes|yes|yes|yes|
+|callable type|function|method|action|procedure|sub method|sub procedure|
+|-|-|-|-|-|-|-|
+|function|yes|no|no|no|no|no|
+|method|yes|yes|no|no|yes|no|
+|action|yes|no|yes|no|no|no|
+|procedure|yes|yes|yes|yes|yes|yes|
+|sub method|yes|no|no|no|yes|no|
+|sub procedure|yes|no|yes|no|yes|yes|
 
 #### Key Structure
 The key structure is defined as the elements of a component which are used to establish a bridge between two or more components. When a component has expectations or requirements, they will expect key elements to be there so that it may properly function. These key elements can be callables, specific fields or they can be ambiguous in-betweens of sorts. These are defined with the keywords `key`, `expect`, `require`, `from`, `is`, `let` and `get`.
