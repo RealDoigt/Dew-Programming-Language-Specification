@@ -855,3 +855,4 @@ Here is a compatibility table:
 
 #### Key Structure
 The key structure is defined as the elements of a component which are used to establish a bridge between two or more components. When a component has expectations or requirements, they will expect key elements to be there so that it may properly function. These key elements can be callables, specific fields or they can be ambiguous in-betweens of sorts. These are defined with the keywords `key`, `expect`, `require`, `from`, `is`, `let` and `get`.
+* The `key` keyword is used to indicate where to find the keys and what they are. The `is` keyword is used to establish that a specific field is the expected/required field. `from` is used for when a key is from another component.
