@@ -865,3 +865,56 @@ The key structure is defined as the elements of a component which are used to es
 Do note that is up to the individual programmer whether to use the plural forms of keywords `type` and `field` or not. The plural forms are aliases of the singular forms. Likewise, there's a plural alias for `key`; `keys`.
 
 Another thing to note is that even though a field is strictly a variable within the component's root scope, callable members of a component are also defined alongside fields under the `field` keyword. 
+
+Example of meeting an expectation with an alternative that can also work same roles because its definition is compatible with the expectation:
+```dew
+struct color then byte r g b
+struct alpha_color then byte r g b a
+
+comp a
+do
+  expect type such color
+od
+
+comp b
+do
+  include
+  as
+    alpha_color
+    a
+  sa
+
+  // because color has all the same members in its definition, even though they are disctinct, it is acceptable as an alternative
+  key such alpha_color is color
+od
+```
+
+Another one which is more advanced. Do note that if the client component has a callable that needs to modify the blue field, it shouldn't be accepted. But because it doesn't, this is valid:
+```dew
+comp crazy_color
+do
+  byte r g
+
+  actn byte random_blue()
+  do
+    // code here
+  od
+od
+
+comp c
+do
+  include
+  as
+    crazy_color
+    a
+  sa
+
+  // because data structures are fused together, the type can be individually separated into single keys for identification purposes.
+  keys
+  as
+    r from crazy_color is r from color
+    g from crazy_color is g from color
+    get random_blue from crazy_color is b from color
+  sa
+od
+```
