@@ -246,7 +246,7 @@ Dew has 9 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`
 |inf|infers the type based on the value assigned to the variable; not a real type|NA|NA|NA|NA|
 
 ### Type Families
-Type families are used for comparing types, which is only useful for template constraints.
+Type families are used for comparing types, which is useful for template constraints, callable contracts and component expectations.
 |family|children|
 |-|-|
 |integer|bits, long bits, long long bits, byte, long byte, long long byte, short int, int, long int|
@@ -856,4 +856,6 @@ Here is a compatibility table:
 #### Key Structure
 The key structure is defined as the elements of a component which are used to establish a bridge between two or more components. When a component has expectations or requirements, they will expect key elements to be there so that it may properly function. These key elements can be callables, specific fields or they can be ambiguous in-betweens of sorts. These are defined with the keywords `key`, `expect`, `require`, `from`, `is`, `let` and `get`.
 
-* The `key` keyword is used to indicate where to find the keys and what they are. The `is` keyword is used to establish that a specific field is the expected/required field. `from` is used for when a key is from another component. When callables are used to simulate a variable that is expected, the `let` and `get` keyword are used in front of the individual key callables to indicate which has the writing role and which has the reading, in that order.
+* The `key` keyword is used to indicate where to find the keys and what they are. The `is` keyword is used to establish that a specific field is the expected/required field. `from` is used for when a key is from another component. When callables are used to simulate a variable that is expected, the `let` and `get` keyword are used in front of the individual key callables to indicate which has the writing role and which has the reading one, in that order.
+
+* The `expect` keyword is used from the client component to establish an expectation. An expectation is defined as something that the component needs to properly function. This doesn't need to be strictly fulfilled by a host component, meaning an alternative can be given. It also means that the expectation can be ambiguous. For example, instead of expecting a field of type `int`, the expectation could be any field of the `integer` type family. The syntax for declaring an expectation is `expect type(s)/field(s) as/such`.
