@@ -862,4 +862,6 @@ The key structure is defined as the elements of a component which are used to es
 
 * The `require` keyword is used from the client component to establish a requirement. A requirement is also defined as something that the component needs to properly function. However, in contrast to an expectation, a requirement needs to be strictly. As such, it doesn't allow alternatives nor does it allow a requirement to have any ambiguity in its definition. The syntax for declaring a requirement is `require type(s)/field(s) as/such`.
 
-Do note that is up to the individual programmer whether to use the plural forms of keywords `type` and `field` or not. The plural forms are aliases of the singular forms. Also even though a field is strictly a variable within the component's root scope, callable members are also defined alongside fields under the field keyword.
+Do note that is up to the individual programmer whether to use the plural forms of keywords `type` and `field` or not. The plural forms are aliases of the singular forms. Likewise, there's a plural alias for `key`; `keys`.
+
+Another thing to note is that even though a field is strictly a variable within the component's root scope, callable members of a component are also defined alongside fields under the `field` keyword. 
