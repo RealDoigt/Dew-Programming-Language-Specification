@@ -889,7 +889,7 @@ do
 od
 ```
 
-Another one which is more advanced. Do note that if the client component has a callable that needs to modify the blue field, it shouldn't be accepted. But because it doesn't, this is valid:
+Another one which is more advanced. Do note that if the included component has a callable that needs to modify the blue field, it shouldn't be accepted. But because it doesn't, this is valid:
 ```dew
 comp crazy_color
 do
