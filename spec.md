@@ -252,12 +252,12 @@ Type families are used for comparing types, which is useful for template constra
 |integer|bits, long bits, long long bits, byte, long byte, long long byte, short int, int, long int|
 |decimal|short real, real, long real, long long real|
 |boolean|bits, long bits, long long bits, bool|
-|strings|short string, string, long string, long long string|
+|stringf|short string, string, long string, long long string|
 |numeric|integer, decimal|
-|text|strings, char|
+|text|stringf, char|
 |binary|numeric, boolean, char|
 |primitive|binary, text|
-|plural|strings, arrays of any type|
+|plural|stringf, arrays of any type|
 |array|plural, bits|
 
 ### Arrays
@@ -918,3 +918,4 @@ do
   sa
 od
 ```
+
