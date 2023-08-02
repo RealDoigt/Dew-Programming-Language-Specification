@@ -78,6 +78,8 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
 ## Introduction
 Dew is a high level programming language intended for experimenting with niche concepts. It is called Dew because it is Doigt's first serious language project and dew usually appears during the morning, which is the first part of the day. Dew's syntax is highly inspired by Algol 68, Bash and B as well as more modern languages such as D. As far as the author is aware, there is only one active project working on a Dew compiler and it is his own project, which is far from complete. This language specification doesn't describe what current compiler(s) can do but what they should do.
 
+This language specification also doubles as user guide, hence the less formal and more helpful document structure. But make no mistake, this is a language specification first.
+
 ## Comments
 Single line comments start with a hash tag `#`.
 Multiline comments start and end with a cent symbol `¢`.
