@@ -247,18 +247,21 @@ Dew has 9 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`
 
 ### Type Families
 Type families are used for comparing types, which is useful for template constraints, callable contracts and component expectations.
-|family|children|
-|-|-|
-|integer|bits, long bits, long long bits, byte, long byte, long long byte, short int, int, long int|
-|decimal|short real, real, long real, long long real|
-|boolean|bits, long bits, long long bits, bool|
-|stringf|short string, string, long string, long long string|
-|numeric|integer, decimal|
-|text|stringf, char|
-|binary|numeric, boolean, char|
-|primitive|binary, text|
-|plural|stringf, arrays of any type|
-|array|plural, bits|
+A type family belonging to the atomic category is a type family which doesn't contain other type families. The opposite case is called the composite category.
+
+|family|children|category|
+|-|-|-|
+|integer|bits, long bits, long long bits, byte, long byte, long long byte, short int, int, long int|atomic|
+|decimal|short real, real, long real, long long real|atomic|
+|boolean|bool|atomic|
+|bitmask|bits, long bits, long long bits|atomic|
+|stringf|short string, string, long string, long long string|atomic|
+|numeric|integer, decimal|composite|
+|text|stringf, char|composite|
+|binary|numeric, boolean, bitmask, char|composite|
+|primitive|binary, text|composite|
+|plural|stringf, arrays of any type|composite|
+|array|plural, bits|composite|
 
 ### Arrays
 An array is declared by adding the index operators `[]` after the type. If the size of the array is known in advance, but the elements aren't, one can type the size within the index operators. In all other cases, the index operators can be empty. Following Algol tradition, `ints`, `reals`, `strings`, `bytes` and `bools` are aliases for arrays of their corresponding type.
@@ -919,3 +922,34 @@ do
 od
 ```
 
+## Type Casting
+An expression of one type can be casted into another type with the casting operator `?`. The syntax for casting is `expression ? type`. Implicit type casting is impossible in Dew, but semi-implicit type casting is; details in section [Semi-Implicit Type Casting](spec.md#semi-implicit-type-casting). 
+
+Expressions can only be cast into compatible types. For values from complex types, this means the target type's fields must exist as is or as equivalents in the value's complex type structure. 
+
+For example, the following complex types:
+```dew
+struct color then byte r g b
+
+struct alpha_color then byte r g b a
+
+struct alpha_color_r
+do
+  byte r g b
+  real a
+od
+
+record quaternion_i then int x y z w
+
+struct student
+do
+  string name id
+  int age
+od
+```
+* A value of type `student` cannot be casted into any of the other types because its fields do not match the structure of the other types. It is also not possible to convert any the other types into `student` for the same reason.
+* A value of type `quaternion_i` cannot be cast into `alpha_color_r`, because values may only be cast into members of an atomic type family at this level (a manual cast of each member would be needed by creating manually a new `alpha_color_r` and casting each field seperately). However, `quaternion_i` values can be cast into an `alpha_color` and a `color`.
+* A value of type `alpha_color` can be cast into `color` and `quaternion_i`, but not `alpha_color_r`.
+* A value of type `color` cannot be cast into any other the other types.
+
+It is not possible to cast into unions. For components, the complex type rules only apply when casting _from_ a component. Components can be cast into structs and records, but the opposite is not allowed.
