@@ -102,7 +102,7 @@ Dew comes with a wide variety of useful operators. This is not an exhaustive lis
 |eor|leor|logical|returns true if only one boolean expression returns true|
 |nand|lnand|logical|returns true if either boolean expressions return false|
 |nor|lnor|logical|returns true if neither boolean expressions return true|
-|eand|leand|logical|returns true if both boolean expressions returns the same result|
+|eand|leand|logical|returns true if both boolean expressions return the same result|
 |<|lower|boolean|returns true if the left operand is smaller than the right operand|
 |>|greater|boolean|returns true if the left operand is greater than the right operand|
 |=|equal|boolean|returns true if both operands are equal|
