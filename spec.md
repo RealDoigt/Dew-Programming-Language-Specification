@@ -267,7 +267,7 @@ A type family belonging to the atomic category is a type family which doesn't co
 |binary|numeric, boolean, bitmask, char|composite|
 |primitive|binary, text|composite|
 |plural|stringf, arrays of any type|composite|
-|array|plural, bits|composite|
+|array|plural, bitmask|composite|
 
 ### Arrays
 An array is declared by adding the index operators `[]` after the type. If the size of the array is known in advance, but the elements aren't, one can type the size within the index operators. In all other cases, the index operators can be empty. Following Algol tradition, `ints`, `reals`, `strings`, `bytes` and `bools` are aliases for arrays of their corresponding type.
@@ -931,7 +931,7 @@ od
 ## Type Casting
 An expression of one type can be casted into another type with the casting operator `?`. The syntax for casting is `expression ? type`. Implicit type casting is impossible in Dew, but semi-implicit type casting is; details in section [Semi-Implicit Type Casting](spec.md#semi-implicit-type-casting). 
 
-Expressions can only be cast into compatible types. For values of primitive types, this means that types from the `binary` type family can be cast into each other, members of the `pl
+Expressions can only be cast into compatible types. For values of primitive types, this means that types from the `binary` type family can be cast into each other and members of the `array` family can be cast into each other. 
 
 For values from complex types, this means the target type's fields must exist as is or as equivalents in the value's complex type structure. 
 For example, the following complex types:
