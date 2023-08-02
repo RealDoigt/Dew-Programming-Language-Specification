@@ -61,6 +61,7 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
 * [Callables](spec.md#callables)
   * [Sub](spec.md#return)
   * [Return](spec.md#return)
+  * [Contract](spec.md#contract)
 * [Complex Types](spec.md#complex-types)
   * [Using a Complex Type](spec.md#using-a-complex-type) 
   * [Struct](spec.md#struct)
@@ -246,7 +247,7 @@ Dew has 9 types (`int`, `real`, `string`, `char`, `byte`, `bool`, `bits`, `void`
 |inf|infers the type based on the value assigned to the variable; not a real type|NA|NA|NA|NA|
 
 ### Type Families
-Type families are used for comparing types, which is useful for template constraints, callable contracts and component expectations.
+Type families are used for comparing types, which is useful for type constraints and component expectations.
 A type family belonging to the atomic category is a type family which doesn't contain other type families. The opposite case is called the composite category.
 
 |family|children|category|
@@ -685,7 +686,7 @@ There are three ways to exit a callable:
 * The program reaches the end of the callable's code block, in which case the behaviour is identical to using an `><`.
 Only `><` can be used to exit a void callable.
 
-The return `<-` statement sets the return value without exiting the callable. The proper syntax is `<- value` The value in the return value can be accessed with the dollar sign `$`.
+The return `<-` statement sets the return value without exiting the callable. The proper syntax is `<- value` The value in the return value can be accessed with the dollar sign `$`. `$` only returns the value, it cannot be used as a variable to modify the state of the return value.
 
 ### Callable Examples
 
