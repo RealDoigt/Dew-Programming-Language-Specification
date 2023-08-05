@@ -784,7 +784,7 @@ od
 ```
 
 ### Call-Assign Syntax
-There is a way to make a specialised assign operator with a callable. To do this, one must type the callable's name then the equal sign `=`. By default, it will use the variable being assigned to as the first parameter, so the first parameter must be omitted from the call. If the variable being assigned to is intended as another parameter, then it must be indicated with an at sign `@`. Whether to allow Shortened Call Syntax or not within the usage of Call-Assign Syntax is up to the individual implementation. Parentheses `()` are only used as expression operators.
+There is a way to "make" a specialised assign operator with a callable. To do this, one must type the callable's name then the equal sign `=`. By default, it will use the variable being assigned to as the first parameter, so the first parameter must be omitted from the call. If the variable being assigned to is intended as another parameter, then it must be indicated with an at sign `@`. Whether to allow Shortened Call Syntax or not within the usage of Call-Assign Syntax is up to the individual implementation. Parentheses `()` are only used as expression operators.
 
 Examples calling a function add_three(int a int b int c):
 ```dew
@@ -797,6 +797,27 @@ total add_three= 20 34 # result is 64
 total add_three= 5 @ 5 # result is 74
 ```
 
+### Shortened Call Syntax
+One can omit the last parameter(s) from a callable call and those parameters will be assigned their type's default value. If more than one parameter is omitted from the callable call, those parameters must follow each other in the callable's signature.
+
+Valid SCS of a string array callable called find_match(string str string find int max_matches). If max_matches is set to 0, it will find all matches:
+```dew
+find_match("Hello" "l") # same as find_match("Hello" "l" 0)
+```
+
+Invalid SCS of a callable called some_callable(string s int i char c):
+```dew
+some_callable('c')
+some_callable(1 'a')
+some_callable("something something" 'n')
+```
+
+Valid calls of the above callable would be:
+```dew
+some_callable()
+some_callable("Hello")
+some_callable("Hello" 5)
+```
 ## Complex Types
 Complex types are user-defined types which can be made of several variables of different types, which are called fields. Most types can only contain fields, but components can also have callables. 
 
