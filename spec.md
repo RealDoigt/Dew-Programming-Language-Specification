@@ -424,7 +424,7 @@ do
   echo(g) # prints 10
 od
 ```
-### Using Specialized Variants of the Assign and Initialize Operators
+#### Using Specialized Variants of the Assign and Initialize Operators
 The assign and initialize operators can also be used on variables which have already been assigned a value. However, there are many specialised variants of these two operators for common usecases.
 
 |assign variant|initialize variant|assign name|initialize name|definition|examples|equivalent example|
@@ -438,6 +438,9 @@ The assign and initialize operators can also be used on variables which have alr
 |&=|&:|andassign|andinit|ands the bits of value(s) of the right expression to the bits of the value held by the variable(s) and assigns the result to the variable(s)|`a &= 16` and `a b &: 16 8`|`a := a & 16` and `a b : (a & 16) (b & 8)`|
 |\|=|\|:|orassign|orinit|ors the bits of value(s) of the right expression to the bits of the value held by the variable(s) and assigns the result to the variable(s)|`a \|= 16` and `a b \|: 16 8`|`a := a \| 16` and `a b : (a \| 16) (b \| 8)`|
 |~=|~:|catassign|catinit|concats the array(s) or string(s) with the result of the left expression and assigns the new array to the arrays on the left-side of the operator. If the array is flexible, no new array is created, the extant array is simply expanded.|`a ~= 16` and `a b ~: 16 8`|`a := a ~ 16` and `a b : (a ~ 16) (b ~ 8)`|
+
+#### By Other Means
+There are other specialised ways by using the cast `?` operator and there exists some shortcuts for callables, but those methods are discussed in their respective sections.
 
 ## Type Aliases
 Custom types can be defined as aliases using the `enum` and `mode` keywords. These types are should ideally be handled at compile time or by a preprocessor.
