@@ -721,14 +721,14 @@ In Dew, a callable is what is called a function in other languages. There are fo
 To declare a callable in Dew, the type of the callable goes first, followed by the return type then the name and the (optional) paramater list enclosed within parentheses. If there are no paramaters, the parentheses can be omitted or left empty.
 
 ### Sub
-`sub` is a callable modifier which can only be used on methods and procedures in a component. It is used to indicate that the side effects of a procedure or method are exclusively limited to the fields of the component it is in. The syntax is `sub proc` and `sub meth`. 
+`sub` is a callable modifier which can only be used on methods and procedures in a component. It is used to indicate that the side effects of a procedure or method are exclusively limited to the fields of the component it is in. The syntax is `sub proc` and `sub meth`.
 
 ### Return
 There are three ways to exit a callable:
 * The exit `><` statement is used to exit from a callable. If there was no set return value, it will return the default type value of the function.
 * The return `->` statement simultaneously sets the return value then exits the callable. The proper syntax is `-> value`
 * The program reaches the end of the callable's code block, in which case the behaviour is identical to using an `><`.
-Only `><` can be used to exit a void callable.
+Only `><` can be used to exit a void callable without reaching the end of the callable's code block.
 
 The return `<-` statement sets the return value without exiting the callable. The proper syntax is `<- value` The value in the return value can be accessed with the dollar sign `$`. `$` only returns the value, it cannot be used as a variable to modify the state of the return value.
 
@@ -781,6 +781,20 @@ do
   if n = 0 then -> 1
   -> n * factorial(n - 1)
 od
+```
+
+### Call-Assign Syntax
+There is a way to make a specialised assign operator with a callable. To do this, one must type the callable's name then the equal sign `=`. By default, it will use the variable being assigned to as the first parameter, so the first parameter must be omitted from the call. If the variable being assigned to is intended as another parameter, then it must be indicated with an at sign `@`. Whether to allow Shortened Call Syntax or not within the usage of Call-Assign Syntax is up to the individual implementation. Parentheses `()` are only used as expression operators.
+
+Examples calling a function add_three(int a int b int c):
+```dew
+int total := 10;
+
+# This is the same as typing total := add_three(total 20 34)
+total add_three= 20 34 # result is 64
+
+# This is the same as typing total := add_three(5 total 5)
+total add_three= 5 @ 5 # result is 74
 ```
 
 ## Complex Types
