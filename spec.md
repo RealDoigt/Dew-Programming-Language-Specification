@@ -34,6 +34,7 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
     * [Using the Initialize Operator](spec.md#using-the-initialize-operator)
     * [Using the Extract Operator](spec.md#using-the-extract-operator)
     * [Using Specialized Variants of the Assign and Initialize Operators](spec.md#using-specialized-variants-of-the-assign-and-initialize-operators)
+  * [Tuple](spec.md#tuple)
 * [Type Aliases](spec.md#type-aliases)
   * [Mode](spec.md#mode)
   * [Enum](spec.md#enum)
@@ -294,7 +295,41 @@ A multidimensional array can either be declared in the form of `type[z y x] arr_
    * Guarrantees that each sub array will have the exact dimensions that were declared. This means arrays of the same level have the same length.
 2. The second case is called a jagged array. It has the following properties:
    * Can be flexible.
-   * Each sub array can vary in length. This means arrays of the same level are not guarrenteed to have the same length.
+   * Each sub array can vary in length. This means arrays from the same dimension are not guarrenteed to have the same length.
+
+### Tuple
+A tuple is an anonymous `record`, useful for returning multiple values from a callable. The syntax for declaring one is by listing the types inside the tuple operators `{}` then the variable's name.
+
+Example:
+```dew
+{int string char} my_tuple
+```
+
+To assign values to a tuple, you assign all values at once by using the tuple operators again and by following the order of the types declared.
+Example:
+```dew
+{int string char} my_tuple := {24 "Hello" 'C'}
+```
+
+To get the value of an individual tuple field, one has to type the variable's name follow by a dot `.` then the field's identifier. The field's identifier is composed of an underscore followed by a number representing a position in the order of declaration (starts at 0).
+
+Example:
+```dew
+echo(my_tuple._2) # prints C
+echo(my_tuple._0) # prints 24
+echo(my_tuple._1) # prints Hello
+```
+
+A tuple's fields may be readonly, but it shouldn't prevent reusing the same tuple to assign a new value to it. This will be considered a new tuple. When only one field has a different value compared to the previous tuple, a shortcut can be used by typing the variable's name, the tuple operators with the position of the field that is changing then assigning the changed value.
+
+Example:
+```dew
+¢
+  The line below this comment is the exact same thing as typing:
+  my_tuple := {34 my_tuple._1 my_tuple_.2}
+¢
+my_tuple{0} := 34
+```
 
 ### References
 The `ref` keyword is used in function signatures and function calls on parameters which hold a copy of the address of the variable rather than a copy of the variable's value. Dereferencing is done automatically.
@@ -530,7 +565,7 @@ od
 `elif`, short for "else if", is an alternative branching condition for a preceding `if`, `un`, `elif` or `elun`. If the preceding conditional evaluated to false, it the code of the `elif` will be evaluated and if true, the code block of the `elif` will be executed. If false, it will be skipped like an ordinary `if`. You can chain multiple elifs and eluns together.
 
 #### Elun
-`elun`, short for "else unless", is the equvilalent else if construct for `un`.
+`elun`, short for "else unless", is the equivalent else if construct for `un`.
 
 #### Else
 If none of the conditionals in a chain are executed, the `else`, which should be last in the chain, will have its code block executed. It doesn't come with a condition. The `else` is always optional.
@@ -574,6 +609,7 @@ do
   STRAWBERRY VANILLA => echo("You have some boring flavors.*n")
   CHOCOLATE => echo("A true classic.*n")
   BANANA => echo("You like it weird and I respect that.*n")
+  else => echo("There was no notable flavour.")
 od
 ```
 
