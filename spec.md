@@ -1034,3 +1034,32 @@ od
 * A value of type `color` cannot be cast into any other the other types.
 
 It is not possible to cast into unions. For components, the complex type rules only apply when casting _from_ a component. Components can be cast into structs and records, but the opposite is not allowed.
+
+### Semi-Implicit Type Casting
+Semi-Implicit Type Casting combines the best of two worlds; the convenience of implicit type casting and the rigorous clarity that explicit type casting brings. It says "here I'm type casting, it should be obvious what I'm doing if you take a short moment to think about it". It avoids making the code ugly and cluttered where a lot of type conversions would be necessary.
+
+To cast semi-implicitely, one must use one of the Semi-Implicit Casting Operators:
+
+|operator|name|definition|examples|
+|-|-|-|-|
+|?=|castassign|Converts the value from the right expression to the type of variable to the left, then assigns that value to the variable.|myIntVar ?= 1.5 + 2.5|
+|?:|castinit|Converts the values from the right expresions to the types of the variables to the left, then assigns the values to those variables|myIntVar myStringVar ?: 1.1 2|
+|?+|castplus|Converts the right operand to the type of the left operand, then returns the sum of the two operands|1.3 ?+ 2|
+|?-|castminus|Converts the right operand to the type of the left operand, then returns the difference of the two operands|1.3 ?- 2|
+|?*|casttimes|Converts the right operand to the type of the left operand, then returns the product of the two operands|1.3 ?* 2|
+|?/|castdiv|Converts the right operand to the type of the left operand, then returns the quotient of the two operands|1.3 ?/ 2|
+|?%|castmod|Converts the right operand to the type of the left operand, then returns the remainder of the two operands|1 ?% 2.3|
+|?^|castpow|Converts the right operand to the type of the left operand, then returns the result of raising the left operand to the power of the right operand|1.3 ?^ 2|
+|?&|castand|Converts the right operand to the type of the left operand, then returns the result of anding the two operands|1 ?& 2.3|
+|?\||castor|Converts the right operand to the type of the left operand, then returns the result of oring the two operands|1 ?\| 2.3|
+|?&&|casteand||1 ?&& 2.3|
+|?\|\||casteor||1 ?\|\| 2.3|
+|?!&|castnand||1 ?!& 2.3|
+|?!\||castnor||1 ?!\| 2.3|
+|?<<|castlshift||1 ?>> 2.3|
+|?>>|castrshift||1 ?<< 2.3|
+|?@>|castlrot||1 ?@> 2.3|
+|?<@|castrrot||1 ?<@ 2.3|
+|?->|castreturn||func int myfunction(real a real b) then ?-> a + b|
+|?<-|castretset||func int myfunction(real a real b) then ?<- a + b|
+|?~|castcat||\[1 2 3\] ?~ \[4.4 5.5 6.6\]|
