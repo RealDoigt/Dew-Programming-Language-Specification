@@ -1053,14 +1053,14 @@ To cast semi-implicitely, one must use one of the Semi-Implicit Casting Operator
 |?^|castpow|Converts the right operand to the type of the left operand, then returns the result of raising the left operand to the power of the right operand|1.3 ?^ 2|
 |?&|castand|Converts the right operand to the type of the left operand, then returns the result of anding the two operands|1 ?& 2.3|
 |?\||castor|Converts the right operand to the type of the left operand, then returns the result of oring the two operands|1 ?\| 2.3|
-|?&&|casteand||1 ?&& 2.3|
-|?\|\||casteor||1 ?\|\| 2.3|
-|?!&|castnand||1 ?!& 2.3|
-|?!\||castnor||1 ?!\| 2.3|
-|?<<|castlshift||1 ?>> 2.3|
-|?>>|castrshift||1 ?<< 2.3|
-|?@>|castlrot||1 ?@> 2.3|
-|?<@|castrrot||1 ?<@ 2.3|
-|?->|castreturn||func int myfunction(real a real b) then ?-> a + b|
-|?<-|castretset||func int myfunction(real a real b) then ?<- a + b|
-|?~|castcat||\[1 2 3\] ?~ \[4.4 5.5 6.6\]|
+|?&&|casteand|Converts the right operand to the type of the left operand, then returns the result of xnoring the two operands|1 ?&& 2.3|
+|?\|\||casteor|Converts the right operand to the type of the left operand, then returns the result of xoring the two operands|1 ?\|\| 2.3|
+|?!&|castnand|Converts the right operand to the type of the left operand, then returns the result of nanding the two operands|1 ?!& 2.3|
+|?!\||castnor|Converts the right operand to the type of the left operand, then returns the result of noring the two operands|1 ?!\| 2.3|
+|?<<|castlshift|Converts the right operand to the type of the left operand, then returns the result of shifting the operand on the left to the left by a number of bits equal to the right operand|1 ?<< 2.3|
+|?>>|castrshift|Converts the right operand to the type of the left operand, then returns the result of shifting to the right the left operand by a number of bits equal to the right operand|1 ?>> 2.3|
+|?<@|castlrot|Converts the right operand to the type of the left operand, then returns the result of rotating the operand on the left to the left by a number of bits equal to the right operand|1 ?<@ 2.3|
+|?@>|castrrot|Converts the right operand to the type of the left operand, then returns the result of rotating to the right the left operand by a number of bits equal to the right operand|1 ?@> 2.3|
+|?->|castreturn|Converts the value to the return type of the callable, sets the return value to that value then return.|func int myfunction(real a real b) then ?-> a + b|
+|?<-|castretset|Converts the value to the return type of the callable and sets the return value to that value|func int myfunction(real a real b) then ?<- a + b|
+|?~|castcat|Converts the right operand to the type of the left operand, then returns the concatenation of the two operands|\[1 2 3\] ?~ \[4.4 5.5 6.6\]|
