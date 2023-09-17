@@ -72,6 +72,7 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
     * [Simultaneous Callables](spec.md#simultaneous-callables)
     * [Key Structure](spec.md#key-structure)  
 * [Type Casting](spec.md#type-casting)
+    * [Semi-Implicit Type Casting](spec.md#semi-implict-type-casting) 
 * [Templates](spec.md#templates)
 * [Modules](spec.md#modules)
 
