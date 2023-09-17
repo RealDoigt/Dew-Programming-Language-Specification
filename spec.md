@@ -75,6 +75,7 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
     * [Semi-Implicit Type Casting](spec.md#semi-implicit-type-casting)
 * [Templates](spec.md#templates)
 * [Modules](spec.md#modules)
+* [Precedence](spec.md#precedence)
 
 ## Introduction
 Dew is a high level programming language intended for experimenting with niche concepts. It is called Dew because it is Doigt's first serious language project and dew usually appears during the morning, which is the first part of the day. Dew's syntax is highly inspired by Algol 68, Bash and B as well as more modern languages such as D. As far as the author is aware, there is only one active project working on a Dew compiler and it is his own project, which is far from complete. This language specification doesn't describe what current compiler(s) can do but what they should do.
@@ -1064,3 +1065,4 @@ To cast semi-implicitely, one must use one of the Semi-Implicit Casting Operator
 |?->|castreturn|Converts the value to the return type of the callable, sets the return value to that value then return.|func int myfunction(real a real b) then ?-> a + b|
 |?<-|castretset|Converts the value to the return type of the callable and sets the return value to that value|func int myfunction(real a real b) then ?<- a + b|
 |?~|castcat|Converts the right operand to the type of the left operand, then returns the concatenation of the two operands|\[1 2 3\] ?~ \[4.4 5.5 6.6\]|
+
