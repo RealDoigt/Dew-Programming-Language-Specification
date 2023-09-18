@@ -228,7 +228,7 @@ Note that both `do` and `then` code blocks introduce scope. By default, there's 
 An `as` code block is for listing properties of some declared type. More specifically, it is used in enums for defining enum members and in components for defining required, expected and included members. It can also be used to list overrides for keys. Just like a `do` block, the `as` block spans multiple lines and is terminated by an inverted `as`; `sa`. Elements are separated by new lines.
 
 #### Such
-`such` is an alternative keyword which can be used to make an `as` block on one line. Elements are separated by white space. To keep the code legible, tt is recommend to use it only when there are few elements to list. Also, one can no longer use the keyword `is` to give a value to an enum member. `such` cannot be used with `key`.
+`such` is an alternative keyword which can be used to make an `as` block on one line. Elements are separated by white space. To keep the code legible, it is recommend to use it only when there are few elements to list. Also, one can no longer use the keyword `is` to give a value to an enum member. `such` cannot be used with `key`.
 
 Note that neither `as` nor `such` code blocks introduce scope.
 
@@ -260,7 +260,7 @@ A type family belonging to the atomic category is a type family which doesn't co
 
 |family|children|category|
 |-|-|-|
-|integer|bits, long bits, long long bits, byte, long byte, long long byte, short int, int, long int|atomic|
+|integer|byte, long byte, long long byte, short int, int, long int|atomic|
 |decimal|short real, real, long real, long long real|atomic|
 |boolean|bool|atomic|
 |bitmask|bits, long bits, long long bits|atomic|
