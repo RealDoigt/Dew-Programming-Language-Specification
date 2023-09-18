@@ -121,10 +121,10 @@ Dew comes with a wide variety of useful operators. This is not an exhaustive lis
 |!&|bnand|binary|returns the result of nanding the bits of the left operand with those of the right operand|
 |!\||bnor|binary|returns the result of noring the bits of the left operand with those of the right operand|
 |&&|beand|binary|returns the result of xnoring the bits of the left operand with those of the right operand|
-|<<|lshift|binary|returns the result of shifting the bits of the left operand to the left by right operand|
-|>>|rshift|binary|returns the result of shifting the bits of the left operand to the right by right operand|
-|<@|lrot|binary|returns the result of rotating the bits of the left operand to the left by right operand|
-|@>|rrot|binary|returns the result of rotating the bits of the left operand to the right by right operand|
+|<<|lshift|binary|returns the result of shifting the bits of the left operand to the left by the right operand|
+|>>|rshift|binary|returns the result of shifting the bits of the left operand to the right by the right operand|
+|<@|lrot|binary|returns the result of rotating the bits of the left operand to the left by the right operand|
+|@>|rrot|binary|returns the result of rotating the bits of the left operand to the right by the right operand|
 
 ### Array Operators
 Array operators are usually infix operators which will create a new array. They also work with the string type to a certain extent.
@@ -1058,10 +1058,10 @@ To cast semi-implicitely, one must use one of the Semi-Implicit Casting Operator
 |?\|\||casteor|Converts the right operand to the type of the left operand, then returns the result of xoring the two operands|1 ?\|\| 2.3|
 |?!&|castnand|Converts the right operand to the type of the left operand, then returns the result of nanding the two operands|1 ?!& 2.3|
 |?!\||castnor|Converts the right operand to the type of the left operand, then returns the result of noring the two operands|1 ?!\| 2.3|
-|?<<|castlshift|Converts the right operand to the type of the left operand, then returns the result of shifting the operand on the left to the left by a number of bits equal to the right operand|1 ?<< 2.3|
-|?>>|castrshift|Converts the right operand to the type of the left operand, then returns the result of shifting to the right the left operand by a number of bits equal to the right operand|1 ?>> 2.3|
-|?<@|castlrot|Converts the right operand to the type of the left operand, then returns the result of rotating the operand on the left to the left by a number of bits equal to the right operand|1 ?<@ 2.3|
-|?@>|castrrot|Converts the right operand to the type of the left operand, then returns the result of rotating to the right the left operand by a number of bits equal to the right operand|1 ?@> 2.3|
+|?<<|castlshift|Converts the right operand to the type of the left operand, then returns the result of shifting the bits of the left operand to the left by the right operand|1 ?<< 2.3|
+|?>>|castrshift|Converts the right operand to the type of the left operand, then returns the result of shifting the bits of the left operand to the right by the right operand|1 ?>> 2.3|
+|?<@|castlrot|Converts the right operand to the type of the left operand, then returns the result of rotating the bits of the left operand to the left by the right operand|1 ?<@ 2.3|
+|?@>|castrrot|Converts the right operand to the type of the left operand, then returns the result of rotating the bits of the left operand to the right by the right operand|1 ?@> 2.3|
 |?->|castreturn|Converts the value to the return type of the callable, sets the return value to that value then return.|func int myfunction(real a real b) then ?-> a + b|
 |?<-|castretset|Converts the value to the return type of the callable and sets the return value to that value|func int myfunction(real a real b) then ?<- a + b|
 |?~|castcat|Converts the right operand to the type of the left operand, then returns the concatenation of the two operands|\[1 2 3\] ?~ \[4.4 5.5 6.6\]|
