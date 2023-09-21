@@ -57,6 +57,7 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
     * [Foreach](spec.md#foreach)
     * [For](spec.md#for)
     * [Repeat](spec.md#repeat)
+    * [Where](spec.md#where)
   * [Break](spec.md#break)
   * [Next](spec.md#next)
 * [Callables](spec.md#callables)
@@ -706,6 +707,9 @@ The basic syntax of a `for` loop is `for var_name := value upto/downto limit do/
 
 #### Repeat
 `repeat` is a very simple loop where it repeats the code block for a set number of times. The syntax is as follows: `repeat value do/then`.
+
+#### Where
+A `where` loop is a loop which iterates over each element of an array, string or bits variable that matches a specific condition. If the condition is not met, that element is skipped. The syntax of a `where` loop is `where [ref] type variable_name of array_name condition do/then`.
 
 ### Break
 The `break` statement can be used to forcibly break from loops. `break all` breaks from all the nested loops. `break this` breaks from the currently executing loop. `break to n` will jump the program back up in the nested loops until it reaches the nth parent loop.
