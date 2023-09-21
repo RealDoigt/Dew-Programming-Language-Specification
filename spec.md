@@ -75,6 +75,10 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
 * [Type Casting](spec.md#type-casting)
     * [Semi-Implicit Type Casting](spec.md#semi-implicit-type-casting)
 * [Templates](spec.md#templates)
+    * [Type Templates](spec.md#type-templates)
+    * [Value Templates](spec.md#value-templates)
+    * [Callable Templates](spec.md#callable-templates)
+    * [Composite Templates](spec.md#composite-templates) 
 * [Modules](spec.md#modules)
 * [Precedence](spec.md#precedence)
 
@@ -1070,3 +1074,8 @@ To cast semi-implicitely, one must use one of the Semi-Implicit Casting Operator
 |?<-|castretset|Converts the value to the return type of the callable and sets the return value to that value|func int myfunction(real a real b) then ?<- a + b|
 |?~|castcat|Converts the right operand to the type of the left operand, then returns the concatenation of the two operands|\[1 2 3\] ?~ \[4.4 5.5 6.6\]|
 
+## Templates
+### Type Templates
+### Value Templates
+### Callable Templates
+### Composite Templates
