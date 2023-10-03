@@ -18,3 +18,12 @@ The Dependent Component is a component that cannot work alone.
 
 #### Host Component
 A Host Component is a component which contains other components.
+
+## The Object Oriented Fallacy
+Object Oriented Programming is often presented as what follows after the development of Modular Programming with Component Based Programming being what follows OOP. This makes sense considering the fact that all current componentised systems are implemented with and work under that paradigm. However, the truth is that components actively go against the grain of Object Oriented Programming.
+
+Components need to interface and work together to maximise reusability. They sacrifice polymorphism and encapsulation in order to facilitate the work on a shared global state. Rather than have a singular object that inherits methods and fields, components aggregate methods and fields. An object is always singular, a component is often the composition of many other components. The key structure shared across these components must be public in order for the components to work while in object oriented programming, the core fields of an object are often preferred to be kept private in order to guarantee encapsulation.
+
+So while components may have seemed at first glance like a natural evolution of objects within the modular programming paradigm, they are in fact different in how they process their innerstate and how they work.
+
+## Why Components Are Sorely Needed
