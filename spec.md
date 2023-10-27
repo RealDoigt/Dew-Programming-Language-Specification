@@ -333,7 +333,7 @@ Example:
 ```dew
 ¢
   The line below this comment is the exact same thing as typing:
-  my_tuple := {34 my_tuple._1 my_tuple_.2}
+  my_tuple := {34 my_tuple._1 my_tuple._2}
 ¢
 my_tuple{0} := 34
 ```
@@ -728,7 +728,7 @@ In Dew, a callable is what is called a function in other languages. There are fo
 * Actions (keyword: `actn`) are callables that are not allowed to have side effects. However, they are not guaranteed to always produce the same output for the same input.
 * Procedures (keyword: `proc`) are completely impure callables with absolutely no guarantees.
 
-To declare a callable in Dew, the type of the callable goes first, followed by the return type then the name and the (optional) paramater list enclosed within parentheses. If there are no paramaters, the parentheses can be omitted or left empty.
+To declare a callable in Dew, the type of the callable goes first, followed by the return type then the name and the (optional) parameter list enclosed within parentheses. If there are no parameters, the parentheses can be omitted or left empty.
 
 ### Sub
 `sub` is a callable modifier which can only be used on methods and procedures in a component. It is used to indicate that the side effects of a procedure or method are exclusively limited to the fields of the component it is in. The syntax is `sub proc` and `sub meth`.
@@ -780,7 +780,7 @@ Example 4:
 func int fib(int n)
 do
   if n < 2 then -> n
-  -> fib(n - 1) + fib(n - 2)
+  -> fib((n - 1)) + fib((n - 2))
 od
 ```
 
@@ -789,7 +789,7 @@ Example 5:
 func int factorial int n)
 do
   if n = 0 then -> 1
-  -> n * factorial(n - 1)
+  -> n * factorial((n - 1))
 od
 ```
 
