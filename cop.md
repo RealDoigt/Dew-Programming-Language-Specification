@@ -24,6 +24,6 @@ Object Oriented Programming is often presented as what follows after the develop
 
 Components need to interface and work together to maximise reusability. They sacrifice polymorphism and encapsulation in order to facilitate the work on a shared global state. Rather than have a singular object that inherits methods and fields, components aggregate methods and fields. An object is always singular, while a component is often the composition of many other components. The key structure shared across these components must be public in order for the components to work while in object oriented programming, the core fields of an object are often preferred to be kept private in order to guarantee encapsulation.
 
-So while components may have seemed at first glance like a natural evolution of objects within the modular programming paradigm, they are in fact different in how they process their data and how they work. I like to think of Component Oriented Programming as something that is similar to Object Oriented Programming on the surface, but it is ultimately a different in a meaningful way.
+So while components may have seemed at first glance like a natural evolution of objects within the modular programming paradigm, they are in fact different in how they process their data and how they work. I like to think of Component Oriented Programming as something that is similar to Object Oriented Programming on the surface, but it is ultimately different in important ways.
 
 ## Why Components Are Sorely Needed
