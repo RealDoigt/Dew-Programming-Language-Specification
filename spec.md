@@ -925,7 +925,7 @@ do
  sa
 od
 ```
-The example above has the key keyword, which will be explained in [Key Structure](spec.#key-structure).
+The example above has the key keyword, which will be explained in [Key Structure](spec.md#key-structure).
 
 #### Simultaneous Callables
 Callables of the same name but from different components are executed in a sequence with the first being the host component then following the order in which the callables' respective components were included.
