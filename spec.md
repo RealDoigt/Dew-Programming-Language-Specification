@@ -786,7 +786,7 @@ od
 
 Example 5:
 ```dew
-func int factorial int n)
+func int factorial(int n)
 do
   if n = 0 then -> 1
   -> n * factorial((n - 1))
