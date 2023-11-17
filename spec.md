@@ -740,7 +740,7 @@ There are three ways to exit a callable:
 * The program reaches the end of the callable's code block, in which case the behaviour is identical to using an `><`.
 Only `><` can be used to exit a void callable without reaching the end of the callable's code block.
 
-The return `<-` statement sets the return value without exiting the callable. The proper syntax is `<- value` The value in the return value can be accessed with the dollar sign `$`. `$` only returns the value, it cannot be used as a variable to modify the state of the return value.
+The return set `<-` statement sets the return value without exiting the callable. The proper syntax is `<- value` The value in the return value can be accessed with the dollar sign `$`. `$` only returns the value, it cannot be used as a variable to modify the state of the return value.
 
 ### Callable Examples
 
