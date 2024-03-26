@@ -78,7 +78,6 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
     * [Type Templates](spec.md#type-templates)
     * [Value Templates](spec.md#value-templates)
     * [Callable Templates](spec.md#callable-templates)
-    * [Composite Templates](spec.md#composite-templates) 
 * [Modules](spec.md#modules)
 * [Precedence](spec.md#precedence)
 
