@@ -1075,7 +1075,10 @@ To cast semi-implicitely, one must use one of the Semi-Implicit Casting Operator
 |?~|castcat|Converts the right operand to the type of the left operand, then returns the concatenation of the two operands|\[1 2 3\] ?~ \[4.4 5.5 6.6\]|
 
 ## Templates
+Templates are made using the casting operator `?`. There are 3 types of templates:
+* Type Template: a template defined by one or more types. Applicable to callables and complex types.
+* Value Template: a template defined by a value. Applicable to callables.
+* Callable Template: a template defined by a callable. Results in a non-complex user-defined type.
 ### Type Templates
 ### Value Templates
 ### Callable Templates
-### Composite Templates
