@@ -78,6 +78,7 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
     * [Type Templates](spec.md#type-templates)
     * [Value Templates](spec.md#value-templates)
     * [Callable Templates](spec.md#callable-templates)
+    * [Composite Templates](spec.md#composite-templates)
 * [Modules](spec.md#modules)
 * [Precedence](spec.md#precedence)
 
@@ -1078,6 +1079,29 @@ Templates are made using the casting operator `?`. There are 3 types of template
 * Type Template: a template defined by one or more types. Applicable to callables and complex types.
 * Value Template: a template defined by a value. Applicable to callables.
 * Callable Template: a template defined by a callable. Results in a non-complex user-defined type.
+* Composite Template: a template defined by other templates. Results in a template.
+
 ### Type Templates
+The type template is the simplest kind of template. It allows for simply making a callable or complex type available for more than one type. For example, if you have an addition callable, you may want it to work for all integer types, but it would take a lot of time to essentially copy and paste the same callable. So what one should do is to use a template like so:
+```dew
+func ?T add(T right T left) then -> right + left
+```
+In order to be sure that the type is corect, you may use a type family instead of a completely generic template:
+```dew
+func integer add(integer right integer left) then -> right + left
+```
+Multiple types may be templated at once:
+```dew
+proc ??T R G? some_proc(T a R b G c)
+do
+  # your code here
+od
+```
+You may also use the latter notation for only one if you prefer.
+
+From the calling side, this is what it looks like:
+```
+inf result := add?int(10 (5 * 2))
+```
 ### Value Templates
 ### Callable Templates
