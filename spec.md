@@ -1084,15 +1084,16 @@ Templates are made using the casting operator `?`. There are 3 types of template
 ### Type Templates
 The type template is the simplest kind of template. It allows for simply making a callable or complex type available for more than one type. For example, if you have an addition callable, you may want it to work for all integer types, but it would take a lot of time to essentially copy and paste the same callable. So what one should do is to use a template like so:
 ```dew
-func ?T add(T right T left) then -> right + left
+?T func T add(T right T left) then -> right + left
 ```
 In order to be sure that the type is corect, you may use a type family instead of a completely generic template:
 ```dew
+#note: integer already exists, so no need to write ?integer before the func keyword
 func integer add(integer right integer left) then -> right + left
 ```
 Multiple types may be templated at once:
 ```dew
-proc ??T R G? some_proc(T a R b G c)
+??T R G? proc void some_proc(T a R b G c)
 do
   # your code here
 od
