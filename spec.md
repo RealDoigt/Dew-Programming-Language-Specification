@@ -1088,7 +1088,7 @@ The type template is the simplest kind of template. It allows for simply making 
 ```
 In order to be sure that the type is corect, you may use a type family instead of a completely generic template:
 ```dew
-#note: integer already exists, so no need to write ?integer before the func keyword
+# note: integer already exists, so no need to write ?integer before the func keyword
 func integer add(integer right integer left) then -> right + left
 ```
 Multiple types may be templated at once:
