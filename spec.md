@@ -1105,4 +1105,21 @@ From the calling side, this is what it looks like:
 inf result := add?int(10 (5 * 2))
 ```
 ### Value Templates
+The value template is a semantic template for indicating the nature of what is being used. It's not a real template. For example, `base?8(mynumber)` or `measure?"centimeter"(table)` are really just a semantically alternative way of writing `base(8 mynumber)` and `measure("centimeter" table)` respectively. Here is how that works for declaring the signature of a value template now:
+
+For base:
+```dew
+?B:int func int base(B number_base int number)
+do
+  # your code here
+od
+```
+
+For measure:
+```dew
+?S:string func double measure(S unit Object3D obj)
+do
+  # your code here
+od
+```
 ### Callable Templates
