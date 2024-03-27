@@ -1076,10 +1076,10 @@ To cast semi-implicitely, one must use one of the Semi-Implicit Casting Operator
 
 ## Templates
 Templates are made using the casting operator `?`. There are 3 types of templates:
-* Type Template: a template defined by one or more types. Applicable to callables and complex types.
-* Value Template: a template defined by a value. Applicable to callables.
-* Callable Template: a template defined by a callable. Results in a non-complex user-defined type.
-* Composite Template: a template defined by other templates. Results in a template.
+* Type Template: a template made using one or more types. Applicable to callables and complex types.
+* Value Template: a template made using a value. Applicable to callables.
+* Callable Template: a template made using a callable. Results in a non-complex user-defined type.
+* Composite Template: a template made using other templates. Results in a template.
 
 ### Type Templates
 The type template is the simplest kind of template. It allows for simply making a callable or complex type available for more than one type. For example, if you have an addition callable, you may want it to work for all integer types, but it would take a lot of time to essentially copy and paste the same callable. So what one should do is to use a template like so:
