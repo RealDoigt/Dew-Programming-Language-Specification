@@ -208,7 +208,7 @@ Code blocks are areas in the code, indicated by a `do`/`od` pair, `as`/`sa` pair
 ### Do
 A `do` code block is for instructions. It is terminated by the inverted form of `do`; `od`. A `do` block will span multiple lines. It can be written using Allman style only, but whether to enforce that standard or not is up to the compiler. Do blocks can be left empty.
 
-Example with a hello world program using both accepted forms:
+Example of a hello world program using a `do` code block:
 ```dew
 proc main
 do
@@ -296,7 +296,7 @@ On the surface, bits look like an array of bools. However in truth, the bits typ
 Maps are declared the same way a normal array would be declared, however the type of the index must be declared within the index operators like in this example: `int[string] mymap`. Maps are always flexible. To initialize the value of map, one separate the pairs with commas `,` with the key first and the value second like in this example: `int[string] villain rankings := ["Darth Vader" 10, "The Goblin" 2, "Blackbear" 7, "Pain" 5]`
 
 #### Multidimensional Arrays
-A multidimensional array can either be declared in the form of `type[z y x] arr_name` or `type[z][y][x]`. 
+A multidimensional array can either be declared in the form of `type[z y x] arr_name` or `type[z][y][x] arr_name`. 
 1. The first case is called a rectangular array. It has the following properties:
    * Cannot be flexible.
    * Guarrantees that each sub array will have the exact dimensions that were declared. This means arrays of the same level have the same length.
