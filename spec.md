@@ -89,7 +89,7 @@ This language specification also doubles as user guide, hence the less formal an
 
 ## Comments
 Single line comments start with a hash symbol `#`.
-Multiline comments start and end with a cent symbol `¢`.
+Multiline comments start with the 2 cent digraph and ends with its inverted digraph `¢2` `2¢`.
 
 ## Identifiers
 Dew identifiers are user-defined names for functions, procedures, variables, modules and custom types. A valid identifier starts with an underscore `_` or any letter of the latin alphabet. Then the rest of the identifier can be any alphanumeric character or underscore. No matter where the character is in the identifier, the character can be lower case or upper case.
@@ -331,10 +331,10 @@ A tuple's fields may be readonly, but it shouldn't prevent reusing the same tupl
 
 Example:
 ```dew
-¢
+¢2
   The line below this comment is the exact same thing as typing:
   my_tuple := {34 my_tuple._1 my_tuple._2}
-¢
+2¢
 my_tuple{0} := 34
 ```
 
@@ -459,10 +459,10 @@ Example 1:
 ```dew
 use std.math
 
-¢
+¢2
  this example makes "quad"
  an alias for long long real
-¢
+2¢
 mode quad is long long real
 
 proc main
@@ -474,10 +474,10 @@ od
 
 Example 2:
 ```dew
-¢
+¢2
  this example establishes equivalent
  types for use with SQL
-¢
+2¢
 
 mode CHAR(size) is char[size]
 mode VARCHAR(size) is flex char[size]
@@ -543,7 +543,7 @@ A conditional is a statement which indicates that the code which follows is only
 #### If
 `if` is the keyword used in Dew for making an if conditional statement. A code block must follow an if statement.
 ```dew
-if ¢insert condition here¢
+if ¢2insert condition here2¢
 do
   # your code here
 od
@@ -977,7 +977,7 @@ do
     a
   sa
 
-  // because color has all the same members in its definition, even though they are disctinct, it is acceptable as an alternative
+  # because color has all the same members in its definition, even though they are disctinct, it is acceptable as an alternative
   key such alpha_color is color
 od
 ```
@@ -990,7 +990,7 @@ do
 
   actn byte random_blue()
   do
-    // code here
+    # code here
   od
 od
 
@@ -1002,7 +1002,7 @@ do
     a
   sa
 
-  // because data structures are fused together, the type can be individually separated into single keys for identification purposes.
+  # because data structures are fused together, the type can be individually separated into single keys for identification purposes.
   keys
   as
     r from crazy_color is r from color
@@ -1123,3 +1123,23 @@ do
 od
 ```
 ### Callable Templates
+A callable template is a way to bind a value to an arbitrary and reduced range of values which are not necessarily consecutive. For example, one might could define a callable template that describes a type which can only be odd; `?:odd_int(int i) such i % 2 = 0`. Or perhaps always lower-case character: `?:lower_char(char c) such c >= 'a' and c <= 'z'`. The syntax is always ?: followed by identifier then a single parameter followed by an as/such block in which one or more boolean conditions are defined, separated by newlines or a logical operator. New lines in this block default to `and` but can become any operator by starting the next line with the intended operator.
+
+```dew
+# example from earlier but on multiple lines 
+?:lower_char(char c)
+as
+ c >= 'a'
+ c <= 'z'
+sa
+
+# only "saturday" or "friday"
+?:weekend_day(string s)
+as
+ s = "saturday"
+ or s = "friday"
+sa
+
+# one liner version of above
+?:weekend_day(string s) such s = "saturday" or s = "friday"
+```
