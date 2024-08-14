@@ -1142,3 +1142,8 @@ sa
 # one liner version of above
 ?:weekend_day(string s) such s = "saturday" or s = "friday"
 ```
+## Modules
+Modules are a way of organising code into commonly scoped groups. Modules can be architectured in a complex way where there are modules that are submodules of a greater super module or they can be a simple single-file module. 
+
+### Module Definition File
+By default, a folder is a module and a file is a submodule of that module, that's how implicit modules work in Dew, but that might not be satisfactory nor a good idea to rely on that for a medium to large codebase.
