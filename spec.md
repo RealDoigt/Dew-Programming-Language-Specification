@@ -1079,7 +1079,6 @@ Templates are made using the casting operator `?`. There are 3 types of template
 * Type Template: a template made using one or more types. Applicable to callables and complex types.
 * Value Template: a template made using a value. Applicable to callables.
 * Callable Template: a template made using a callable. Results in a non-complex user-defined type.
-* Composite Template: a template made using other templates. Results in a template.
 
 ### Type Templates
 The type template is the simplest kind of template. It allows for simply making a callable or complex type available for more than one type. For example, if you have an addition callable, you may want it to work for all integer types, but it would take a lot of time to essentially copy and paste the same callable. So what one should do is to use a template like so:
@@ -1123,7 +1122,7 @@ do
 od
 ```
 ### Callable Templates
-A callable template is a way to bind a value to an arbitrary and reduced range of values which are not necessarily consecutive. For example, one might could define a callable template that describes a type which can only be odd; `?:odd_int(int i) such i % 2 = 0`. Or perhaps always lower-case character: `?:lower_char(char c) such c >= 'a' and c <= 'z'`. The syntax is always ?: followed by identifier then a single parameter followed by an as/such block in which one or more boolean conditions are defined, separated by newlines or a logical operator. New lines in this block default to `and` but can become any operator by starting the next line with the intended operator.
+A callable template is a way to bind a value to an arbitrary and reduced range of values which are not necessarily consecutive. For example, one might define a callable template that describes a type which can only be odd; `?:odd_int(int i) such i % 2 = 0`. Or perhaps always lower-case character: `?:lower_char(char c) such c >= 'a' and c <= 'z'`. The syntax is always ?: followed by identifier then a single parameter followed by an as/such block in which one or more boolean conditions are defined, separated by newlines or a logical operator. New lines in this block default to `and` but can become any operator by starting the next line with the intended operator.
 
 ```dew
 # example from earlier but on multiple lines 
