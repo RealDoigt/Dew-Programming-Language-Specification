@@ -589,7 +589,7 @@ else then echo('*nYou are an adult of working age.')
 ```
 
 #### Once
-`once` is a shortcut for writing an if/un/elif/elun/else chain. It starts with `once`, the variable to evaluate then, optionally, an operator or a booleam callable which takes exactly two parameters. The callable's name should be typed without parentheses. The default operator is `=`. The first match in the `once` will be executed. If there is no match, the `else` will be executed. The `once` uses an alternative code block syntax where each case starts with the a list of values separated by spaces followed by an arrow `=>`. If the code is only one line, then it can also be typed out on the same line, otherwise it follows on separate lines.
+`once` is a shortcut for writing an if/un/elif/elun/else chain. It starts with `once`, the variable to evaluate then, optionally, an operator or a boolean callable which takes exactly two parameters. The callable's name should be typed without parentheses. The default operator is `=`. The first match in the `once` will be executed. If there is no match, the `else` will be executed. The `once` uses an alternative code block syntax where each case starts with the a list of values separated by spaces followed by an arrow `=>`. If the code is only one line, then it can also be typed out on the same line, otherwise it follows on separate lines.
 
 ```dew
 # selects and execute the first case where age is under the value being tested
