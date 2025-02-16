@@ -723,7 +723,7 @@ The `next` statement, also known as `continue` in other languages, forces the lo
 
 ## Callables
 In Dew, a callable is what is called a function in other languages. There are four types of callables:
-* Functions (keyword: `func`) are pure callables, meaning that for the same input, they always produce the same output and no side effect is allowed. No random numbers, no modifying modifying variables outside the callable's scope nor any references and no IO. If a function is not pure, then the compiler should refuse to compile.
+* Functions (keyword: `func`) are pure callables, meaning that for the same input, they always produce the same output and no side effect is allowed. No random numbers, no modifying variables outside the callable's scope nor any references and no IO. If a function is not pure, then the compiler should refuse to compile.
 * Methods (keyword: `meth`) are callables that always produce the same output for the same input, but side effects are allowed.
 * Actions (keyword: `actn`) are callables that are not allowed to have side effects. However, they are not guaranteed to always produce the same output for the same input.
 * Procedures (keyword: `proc`) are completely impure callables with absolutely no guarantees.
