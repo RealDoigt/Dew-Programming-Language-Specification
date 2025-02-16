@@ -85,7 +85,7 @@ NOTE: This document often refers to imaginary variables like "value". In any cas
 ## Introduction
 Dew is a high level programming language intended for experimenting with niche concepts. It is called Dew because it is Doigt's first serious language project and dew usually appears during the morning, which is the first part of the day. Dew's syntax is highly inspired by Algol 68, Bash and B as well as more modern languages such as D. As far as the author is aware, there is only one active project working on a Dew compiler and it is his own project, which is far from complete. This language specification doesn't describe what current compiler(s) can do but what they should do.
 
-This language specification also doubles as user guide, hence the less formal and more helpful document structure. But make no mistake, this is a language specification first.
+This language specification also doubles as user guide, hence the less formal and slightly helpful document structure. But make no mistake, this is a language specification first.
 
 ## Comments
 Single line comments start with a hash symbol `#`.
@@ -227,13 +227,13 @@ Then blocks can be chained. In the below example, a program prints out all the a
 proc main(string args) then if @args > 0 then foreach string arg of args then echo(arg)
 ```
 
-Note that both `do` and `then` code blocks introduce scope. By default, there's only one scope; the global scope, which is accessible from everywhere. However, created scopes are only accessible from within itself and scopes within that scope. This means for example, that two variables `a` can exist in different scopes that are not within one or the other because they will not enter into conflict with each other, but that also means that neither scope has access to the value in that other scope. When the execution leaves the scope, the values of the variables declared in that scope are forgotten and will be reset once the scope is reenterred. 
+Note that both `do` and `then` code blocks introduce scope. By default, there's only one scope; the global scope, which is accessible from everywhere. However, created scopes are only accessible from within themselves and other scopes within those scopes. This means for example, that two variables `a` can exist in different scopes that are not within one or the other because they will not enter into conflict with each other, but that also means that neither scope has access to the value in that other scope. When the execution leaves the scope, the values of the variables declared in that scope are forgotten and will be reset once the scope is reenterred. 
 
 ### As
 An `as` code block is for listing properties of some declared type. More specifically, it is used in enums for defining enum members and in components for defining required, expected and included members. It can also be used to list overrides for keys. Just like a `do` block, the `as` block spans multiple lines and is terminated by an inverted `as`; `sa`. Elements are separated by new lines.
 
 #### Such
-`such` is an alternative keyword which can be used to make an `as` block on one line. Elements are separated by white space. To keep the code legible, it is recommend to use it only when there are few elements to list. Also, one can no longer use the keyword `is` to give a value to an enum member. `such` cannot be used with `key`.
+`such` is an alternative keyword which can be used to make an `as` block on one line. Elements are separated by white space. To keep the code legible, it is recommend to use it only when there are few elements to list. Also, one cannot longer use the keyword `is` in a enum when using the `such` keyword. `such` cannot be used with `key`.
 
 Note that neither `as` nor `such` code blocks introduce scope.
 
